@@ -1,0 +1,4396 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutte le notizie - PuntoPolitico</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">23 giugno 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">
+      Notizie italiane<br>
+      senza filtri
+    </div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">
+      Aggiornato ogni giorno<br>
+      da fonti pubbliche e verificate.
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html" >Home</a>
+      <a href="temi.html" >Temi politici</a>
+      <a href="partiti.html" >Partiti</a>
+      <a href="notizie.html" class="active">Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+
+
+
+<div class="wrap">
+
+  <div class="cat-nav" id="tag-filter">
+    <span class="cat-nav-label">Filtra per</span>
+    
+      <button type="button" class="tag-toggle" data-tag="politica">Politica</button>
+    
+      <button type="button" class="tag-toggle" data-tag="cronaca">Cronaca</button>
+    
+      <button type="button" class="tag-toggle" data-tag="cultura">Cultura</button>
+    
+      <button type="button" class="tag-toggle" data-tag="economia">Economia</button>
+    
+      <button type="button" class="tag-toggle" data-tag="esteri">Esteri</button>
+    
+      <button type="button" class="tag-toggle" data-tag="cronaca nera">Cronaca Nera</button>
+    
+      <button type="button" class="tag-toggle" data-tag="altro">Altro</button>
+    
+    <button type="button" class="tag-clear" id="tag-clear" style="display:none;">Annulla filtri</button>
+  </div>
+
+  <div class="search-bar-row">
+    <input
+      type="search"
+      id="story-search"
+      class="story-search-input"
+      placeholder="Cerca nelle notizie…"
+      autocomplete="off"
+    >
+    <span class="search-count" id="search-count"></span>
+  </div>
+
+  <div class="section-label red">Tutte le notizie (<span id="visible-count">65</span>)</div>
+
+  <div class="story-list" id="story-list">
+    
+    <div class="story-card"
+         data-headline="abelardo de la espriella vince le presidenziali in colombia"
+         data-summary="abelardo de la espriella, detto &#34;el tigre&#34;, candidato di destra, vince di misura le presidenziali in colombia con circa il 49,7% contro il 48,7% del candidato di sinistra iván cepeda. la sinistra contesta il risultato e chiede il riconteggio, denunciando presunti brogli e irregolarità in 33mila seggi."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/20.html">Abelardo de la Espriella vince le presidenziali in Colombia</a>
+        </div>
+        <div class="story-card-summary">Abelardo de la Espriella, detto &#34;El Tigre&#34;, candidato di destra, vince di misura le presidenziali in Colombia con circa il 49,7% contro il 48,7% del candidato di sinistra Iván Cepeda. La sinistra contesta il risultato e chiede il riconteggio, denunciando presunti brogli e irregolarità in 33mila seggi.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.adnkronos.com/internazionale/esteri/elezioni-colombia-abelardo-de-la-espriella-vince-presidenziali_4EE9jEm81iO288WX01r5AY" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-22/colombia-el-tigre-espriella-trump-37673658/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/chi-e-el-tigre-il-neoeletto-presidente-della-colombia-3fbd661b-8141-4b2e-bc12-193946d27815.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/si-chiama-el-tigre-la-motosega-di-colombia" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/politica-estera/tigre-conquista-bogot-chi-abelardo-de-espriella-2682475.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/elezioni-colombia-de-la-espriella-brogli-notizie/8425731/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/mondo/2026/06/22/colombia-de-la-espriella-vince-di-un-soffio-e-la-sinistra-vuole-il-riconteggio_1811ef1d-9072-488c-968a-a8d6330ef603.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/video/2026/06/caroselli-bandiere-e-una-tigre-gigante-la-notte-di-de-la-espriella-a-bogot-20233a38-7799-4ed8-8103-5f423d378d2e.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>7</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="starmer verso le dimissioni"
+         data-summary="keir starmer si dimette da premier laburista il 22 giugno 2026, dopo la vittoria schiacciante di andy burnham alle suppletive e le pressioni interne. resta in carica fino alla successione, prevista entro settembre."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/3.html">Starmer verso le dimissioni</a>
+        </div>
+        <div class="story-card-summary">Keir Starmer si dimette da premier laburista il 22 giugno 2026, dopo la vittoria schiacciante di Andy Burnham alle suppletive e le pressioni interne. Resta in carica fino alla successione, prevista entro settembre.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.agi.it/estero/news/2026-06-22/starmer-dimissioni-primo-ministro-regno-unito-37676515/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/ultimora/gb-premier-starmer-annuncia-dimissioni--027b0a7e-2bf0-4c16-8bb4-9027d7bcbfd3.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/cronaca-internazionale/starmer-si-dimette-2682479.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/topnews/2026/06/22/keir-starmer-annuncia-le-sue-dimissioni_3f1b1498-695b-474f-a358-b13c2ca897af.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.adnkronos.com/internazionale/esteri/starmer-rassegnero-le-dimissioni-da-leader-del-partito_yU6tI7RlMEcKoGABs4Cqs" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/dimissioni-starmer-premier-regno-unito-notizie/8425851/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.agi.it/estero/news/2026-06-21/gb-regno-unito-starmer-dimissioni-37669988/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="AGI">
+      
+        <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+        
+          <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/2026/06/regno-unito-il-premier-keir-starmer-annuncia-le-dimissioni-31b1aaed-0a25-4977-aa88-af1800ebaedc.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/2026/06/regno-unito-chi-e-andy-burnham-lo-sfidante-di-starmer-il-king-of-the-north-48a2fcd1-cc1a-4911-a84b-3fd97aafb434.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.ilgiornale.it/news/politica-estera/chi-andy-burnham-re-nord-che-pu-detronizzare-starmer-ed-2681328.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/mondo/2026/06/22/starmer-annuncia-le-dimissioni_499a8c71-6fd6-4039-b740-376e5b5a71cf.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>6</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="indagini sulla scomparsa di due sorelle in abruzzo"
+         data-summary="le indagini proseguono su sarah e alisya, due sorelle di 12 e 16 anni scomparse dalla casa famiglia di civitella alfedena e recentemente ritrovate. il procuratore luciano d&#39;angelo ha sentito il fidanzato di alisya e altre persone informate. ricerche sono state condotte su diversi fronti, ma non si escludono ipotesi di allontanamento con l&#39;aiuto di terzi."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/6.html">Indagini sulla scomparsa di due sorelle in Abruzzo</a>
+        </div>
+        <div class="story-card-summary">Le indagini proseguono su Sarah e Alisya, due sorelle di 12 e 16 anni scomparse dalla casa famiglia di Civitella Alfedena e recentemente ritrovate. Il procuratore Luciano D&#39;Angelo ha sentito il fidanzato di Alisya e altre persone informate. Ricerche sono state condotte su diversi fronti, ma non si escludono ipotesi di allontanamento con l&#39;aiuto di terzi.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/undefined-21/8425883/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/nazionale/fuga-ricerche-lettere-mamma-e-ritrovamento-cosa-sappiamo-sul-2682462.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.adnkronos.com/cronaca/sorelle-scomparse-abruzzo-ritrovate-ultime-notizie-cosa-sappiamo-finora_34b31KRPgo3GbqVRzbEWyC" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-21/sorelline-scomparse-minturno-formia-ritrovate-37671880/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/22/ritrovate-le-sorelle-scomparse.-fermati-la-madre-il-compagno-e-il-nonno.-sono-accusati-di-sequestro_3a189ff0-40b9-47b6-8ec2-3b8f129efdd7.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/sorelline-scomparse-ritrovate-vive-a-formia-dai-carabinieri-erano-a-casa-della-zia-a8cbfe7d-7c0c-4cfd-8fad-d18d156d23fc.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.ilgiornale.it/news/nazionale/sorelline-scomparse-dallaquilano-tre-fermi-sequestro-persona-2682409.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+    <a href="https://www.ilgiornale.it/news/attualit/sorelline-scomparse-abruzzo-trovate-formia-stanno-bene-2682277.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+    <a href="https://www.agi.it/cronaca/news/2026-06-21/sorelle-scomparse-abruzzo-ultime-notizie-37664768/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="AGI">
+      
+        <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+        
+          <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+        
+      
+    </a>
+    
+    <a href="https://www.agi.it/cronaca/news/2026-06-22/sorelline-scomparse-tre-fermi-37673689/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="AGI">
+      
+        <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+        
+          <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/22/le-sorelle-quando-sono-state-trovate-vogliamo-stare-con-mamma_097d59e3-ac4a-4c62-bd63-7a436bcc37d8.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/video/2026/06/sorelle-ritrovate-a-formia-in-carcere-la-madre-il-suo-compagno-e-il-nonno-delle-ragazzine-b0c56b95-00a0-4c86-8419-55533fc2f1ff.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/2026/06/sorelline-scomparse-ritrovate-vive-a-formia-dai-carabinieri-erano-a-casa-della-zia-734cc6cc-d535-4cd6-bf5c-450df445ccbb.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/ultimora/sorelline-ritrovate-tre-i-fermati-a7df8f02-bd9d-42fc-a3f4-6948d50fb03c.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>6</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="trump attacca meloni: &#39;in calo di popolarità&#39;. la premier ribatte"
+         data-summary="il presidente usa accusa la premier di averlo cercato per una foto al g7 e di voler tornare sua amica per risalire nei sondaggi, mentre meloni replica duramente definendo tutto falso e invitando trump a preoccuparsi della sua popolarità. la crisi si allarga con l&#39;annullamento della missione di tajani a washington e la solidarietà di mattarella alla premier e con una nuova replica da parte di trump."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/9.html">Trump attacca Meloni: &#39;In calo di popolarità&#39;. La premier ribatte</a>
+        </div>
+        <div class="story-card-summary">Il presidente Usa accusa la premier di averlo cercato per una foto al G7 e di voler tornare sua amica per risalire nei sondaggi, mentre Meloni replica duramente definendo tutto falso e invitando Trump a preoccuparsi della sua popolarità. La crisi si allarga con l&#39;annullamento della missione di Tajani a Washington e la solidarietà di Mattarella alla premier e con una nuova replica da parte di Trump.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/europa/notizie/rubriche/altrenews/2026/06/19/ansa-trump-shock-su-meloni-tra-italia-e-usa-ora-e-rottura-totale_e4cc6bef-008c-4309-be04-7aa6e4374069.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.linkiesta.it/2026/06/nuovo-attacco-donald-trump-giorgia-meloni/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Linkiesta">
+    
+      <img class="logo-light" src="assets/logos/linkiesta.png" alt="Linkiesta">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/trump-insiste-giorgia-meloni-voleva-tornare-amica-mia-perche-in-italia-e-in-calo-no-grazie--cbdb64fe-edbe-4c16-a458-bb2d9a06bd68.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/politica-estera/trump-insiste-contro-meloni-e-l-italia-non-ci-sono-2682280.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-20/trump-meloni-amica-nato-37656166/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/trump-meloni-ormai-e-rissa-cerca-voti-lei-pensa-a-te" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.linkiesta.it/2026/06/mari-ciabatti-meloni-trump/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Linkiesta">
+      
+        <img class="logo-light" src="assets/logos/linkiesta.png" alt="Linkiesta">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/ultimora/trump-meloni-vuole-tornare-amica-no-3641eb66-4b56-401a-893b-e5f43aa22140.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/ultimora/meloni-a-trump-pensa-a-tua-popolarita--ad504039-dfbe-4121-a26d-d16274a282cb.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>6</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="colloqui usa-iran in svizzera: primo round con divergenze"
+         data-summary="negoziazioni tra stati uniti e iran a bürgenstock, con pakistan e qatar come mediatori. si sono costituiti gruppi tecnici per discutere degli accordi riguardanti la guerra e le relative crisi economiche."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/4.html">Colloqui Usa-Iran in Svizzera: primo round con divergenze</a>
+        </div>
+        <div class="story-card-summary">Negoziazioni tra Stati Uniti e Iran a Bürgenstock, con Pakistan e Qatar come mediatori. Si sono costituiti gruppi tecnici per discutere degli accordi riguardanti la guerra e le relative crisi economiche.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/topnews/2026/06/22/teheran-in-svizzera-liran-ha-avuto-brevi-colloqui-con-gli-usa-sul_8148e395-19ca-40a8-b9b1-85446bc5158e.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-22/colloqui-iran-usa-accordo-60-giorni-37673103/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/guerra/negoziati-usa-iran-concluso-primo-round-colloqui-concordata-2682426.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.adnkronos.com/internazionale/esteri/usa-iran-negoziati-svizzera-news-oggi-22-giugno_6sMfZyY8RRZvtWXLwh7Muj" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/video/2026/06/primo-round-negoziale-usa-iran-ci-sono-gia-le-prime-divergenze-5878b5ab-dda7-4a98-9400-64cffaafe077.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.ansa.it/sito/notizie/mondo/2026/06/22/negoziati-iran-usa-ripresa-immediata-delle-discussioni-tecniche.-teheran-brevi_3f548fa6-7a33-4da3-9874-13453cd0e01a.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/topnews/2026/06/22/colloqui-iran-usa-la-svizzera-annuncia-ripresa-immediata-discussioni-tecniche_14eef165-67d6-41e0-be29-ab5f5956e2a4.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/europa/notizie/rubriche/altrenews/2026/06/20/berna-continuiamo-a-lavorare-per-facilitare-i-colloqui-usa-iran_04158a48-b45e-480a-9a5b-7ed7a9952779.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.agi.it/estero/news/2026-06-21/colloqui-usa-iran-svizzera-37662928/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="AGI">
+      
+        <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+        
+          <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+        
+      
+    </a>
+    
+    <a href="https://www.agi.it/estero/news/2026-06-21/trump-minaccia-iran-colloqui-37667621/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="AGI">
+      
+        <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+        
+          <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+        
+      
+    </a>
+    
+    <a href="https://www.ilgiornale.it/news/guerra/linea-diretta-sullo-stretto-hormuz-e-piano-fermare-guerra-2682403.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+    <a href="https://www.adnkronos.com/internazionale/esteri/usa-iran-negoziati-trump-minacce_6u8MbQjyAy8wfdUWgO6Gfh" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Adnkronos">
+      
+        <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/video/2026/06/vertice-in-svizzera-usa-iran-pace-in-libano-e-hormuz-restano-i-temi-chiave--19f4fcb4-b5f2-4709-b0d8-c9cce85dca00.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>5</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="almasri condannato a 7 anni e 4 mesi in libia"
+         data-summary="il tribunale di tripoli ha condannato osama najeem almasri a 7 anni e 4 mesi per aver violato i diritti dei detenuti. l&#39;ex comandante del carcere di mitiga, ricercato dalla corte penale internazionale, è stato rimpatriato in libia dopo essere stato arrestato in italia. la condanna non chiude il procedimento davanti alla corte penale internazionale."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/12.html">Almasri condannato a 7 anni e 4 mesi in Libia</a>
+        </div>
+        <div class="story-card-summary">Il Tribunale di Tripoli ha condannato Osama Najeem Almasri a 7 anni e 4 mesi per aver violato i diritti dei detenuti. L&#39;ex comandante del carcere di Mitiga, ricercato dalla Corte penale internazionale, è stato rimpatriato in Libia dopo essere stato arrestato in Italia. La condanna non chiude il procedimento davanti alla Corte penale internazionale.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/il-tribunale-di-tripoli-condanna-almasri-a-7-anni-e-4-mesi_cd54aefd-7b36-4802-bd94-a5f368fa2f31.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.linkiesta.it/2026/06/almasri-condannato-tribunale-tripoli/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Linkiesta">
+    
+      <img class="logo-light" src="assets/logos/linkiesta.png" alt="Linkiesta">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/caso-almasri-condannato-a-7-anni-a-tripoli-lex-comandante-torturatore-di-mitiga-ad38f409-19d4-484d-8360-c1410be46d40.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-21/libia-almasri-condannato-carcere-37670359/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/articoli/ultimora/-libia-almasri-condannato-a-7-anni--9073a066-5e7b-430c-ad10-5cacf51dcdd1.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>4</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="crosetto sull&#39;atteggiamento di trump nei confronti dell&#39;italia"
+         data-summary="il ministro della difesa guido crosetto ha affermato che i rapporti tra italia e stati uniti sono profondi e solidissimi, nonostante l&#39;attacco di donald trump a giorgia meloni. crosetto ritiene che l&#39;atteggiamento del presidente americano sia difficile da comprendere."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/21.html">Crosetto sull&#39;atteggiamento di Trump nei confronti dell&#39;Italia</a>
+        </div>
+        <div class="story-card-summary">Il ministro della Difesa Guido Crosetto ha affermato che i rapporti tra Italia e Stati Uniti sono profondi e solidissimi, nonostante l&#39;attacco di Donald Trump a Giorgia Meloni. Crosetto ritiene che l&#39;atteggiamento del presidente americano sia difficile da comprendere.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.linkiesta.it/2026/06/trump-meloni-sudditanza-somiglianza/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Linkiesta">
+    
+      <img class="logo-light" src="assets/logos/linkiesta.png" alt="Linkiesta">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/interni/trump-parla-crosetto-atteggiamento-difficile-capire-usa-2682167.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-21/mary-trump-intervista-donald-misogeno-37665078/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/crosetto-rapporto-con-usa-saldissimo-non-ho-capito-atteggiamento-trump_f0ec3ca5-c3c3-43bb-a5a6-26c945560e21.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>4</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="incidente a senago: tre giovani morti in auto con nove passeggeri"
+         data-summary="nel tragico incidente avvenuto a senago, un&#39;auto con nove persone a bordo è finita nel canale villoresi. tre giovani di 17 anni sono rimasti uccisi, mentre sei altri sono stati feriti. il conducente, un italiano di 19 anni, risultato positivo all&#39;alcol test, è stato arrestato e indagato per omicidio stradale aggravato."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/27.html">Incidente a Senago: tre giovani morti in auto con nove passeggeri</a>
+        </div>
+        <div class="story-card-summary">Nel tragico incidente avvenuto a Senago, un&#39;auto con nove persone a bordo è finita nel canale Villoresi. Tre giovani di 17 anni sono rimasti uccisi, mentre sei altri sono stati feriti. Il conducente, un italiano di 19 anni, risultato positivo all&#39;alcol test, è stato arrestato e indagato per omicidio stradale aggravato.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/nazionale/camilla-lorenzo-e-riccardo-chi-erano-tre-vittime-dell-2682185.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-21/incidente-senago-auto-canale-37664250/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/scontro-fra-auto-nel-ferrarese-un-morto-e-tre-feriti-gravi_1f91ba9f-1b41-4ea2-adb8-00c794c28f48.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/ultimora/senago-auto-si-ribalta-morti-tre-17enni-b81fecb2-3f08-4818-b44c-e89cf62cd5d0.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>4</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="scandalo strega: mari difende posizione"
+         data-summary="la fondazione strega respinge le dichiarazioni offensive su michela murgia, ma mari si schiera in difesa negando i commenti sull&#39;aspetto fisico della scrittrice. i finalisti del premio strega si preparano per la finale."
+         data-category="cultura">
+      <div class="story-card-body">
+        <div class="story-card-category">Cultura</div>
+        <div class="story-card-headline">
+          <a href="story/7.html">Scandalo Strega: Mari difende posizione</a>
+        </div>
+        <div class="story-card-summary">La Fondazione Strega respinge le dichiarazioni offensive su Michela Murgia, ma Mari si schiera in difesa negando i commenti sull&#39;aspetto fisico della scrittrice. I finalisti del Premio Strega si preparano per la finale.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cultura/2026/06/21/il-caso-mari-la-fondazione-bellonci-il-regolamento-dello-strega-non-consente-esclusioni_26ec63e5-c135-462a-86ff-471a5fdd5b75.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/strega-nessuna-esclusione-per-michele-mari-per-le-parole-su-michela-murgia-dc9304b7-af0e-4f53-a0e2-55d22daa0996.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/letteratura/frasi-sulla-murgia-decisione-premio-strega-michele-mari-2682269.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.ansa.it/sito/notizie/cultura/libri/libro_in_piazza/2026/06/21/fondazione-bellonci-il-regolamento-strega-non-consente-esclusioni.-mari-resta-in-gara_588d619c-ffa5-42b9-a6fd-5a96ab8843fe.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/cultura/libri/2026/06/21/fondazione-bellonci-il-regolamento-strega-non-consente-esclusioni.-mari-resta-in-gara_e1be9bbc-36c2-4668-91f6-68c7c1dbce6c.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/cultura/libri/libro_in_piazza/2026/06/19/scoppia-il-caso-mari-lo-strega-frasi-denigratorie-incompatibili-con-il-premio_e02bf7ab-c7fe-4b18-a96c-e7ad857c6323.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/cultura/libri/2026/06/19/scoppia-il-caso-mari-lo-strega-frasi-denigratorie-incompatibili-con-il-premio_0bbdd0b2-31e8-45d0-9d04-229f04a34e61.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="madre e figlia trovate morte in casa a torino: ipotesi omicidio-suicidio"
+         data-summary="a torino, una donna di 39 anni e la sua figlia di 13 anni sono state trovate morte nell&#39;appartamento dove vivevano. la prima ipotesi è quella di un omicidio-suicidio, con la madre che avrebbe strangolato la figlia prima di togliersi la vita. la figlia maggiore, 19enne, ha dato l&#39;allarme e si trova in stato di shock all&#39;ospedale."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/10.html">Madre e figlia trovate morte in casa a Torino: ipotesi omicidio-suicidio</a>
+        </div>
+        <div class="story-card-summary">A Torino, una donna di 39 anni e la sua figlia di 13 anni sono state trovate morte nell&#39;appartamento dove vivevano. La prima ipotesi è quella di un omicidio-suicidio, con la madre che avrebbe strangolato la figlia prima di togliersi la vita. La figlia maggiore, 19enne, ha dato l&#39;allarme e si trova in stato di shock all&#39;ospedale.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/2026/06/madre-e-figlia-trovate-morte-in-casa-a-torino-ipotesi-omicidio-suicidio-6074a530-6c3d-4de9-bd9f-291bf064e2fb.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-21/uccide-figlia-suicida-donna-torino-37668438/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/nazionale/madre-uccide-figlia-13-anni-e-poi-si-toglie-vita-trovarle-2682192.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/video/2026/06/omicidio-suicidio-torino-donna-strangolato-figlia-d019e90f-0984-49ef-aad2-5bf970cd7931.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/ultimora/uccide-la-figlia-13enne-poi-si-suicida-e74b0d32-fbd9-4b26-b2f0-d53005a6e398.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/2026/06/sofia-muore-a-22-anni-il-video-choc-con-le-risate-del-ragazzo-a-bordo-dellauto-che-lha-investita-f35f7b62-041a-4a33-90c6-81af2bb92cd5.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="pisa: ospedale condannato per tumore non diagnosticato"
+         data-summary="un tribunale di pisa ha condannato l’azienda ospedaliero-universitaria pisana (aoup) e un medico per la morte di una donna a causa di un cancro non diagnosticato per dieci anni. la sentenza, emessa cinque anni dopo il decesso della paziente, stabilisce un risarcimento di circa un milione di euro ai familiari."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/11.html">Pisa: ospedale condannato per tumore non diagnosticato</a>
+        </div>
+        <div class="story-card-summary">Un tribunale di Pisa ha condannato l’Azienda Ospedaliero-Universitaria Pisana (Aoup) e un medico per la morte di una donna a causa di un cancro non diagnosticato per dieci anni. La sentenza, emessa cinque anni dopo il decesso della paziente, stabilisce un risarcimento di circa un milione di euro ai familiari.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/tumore-non-diagnosticato-pisa-ospedale-risarcimento-notizie/8425757/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/video/2026/06/filippine-sparatoria-in-una-scuola-superiore-tre-morti-e-cinque-feriti-0efac2dd-a500-4a52-b123-67b9bc9e5bb4.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-20/ragazzo-arrestato-picchiato-agenti-carcere-37653702/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/articoli/2026/06/sparatoria-in-un-liceo-nelle-filippine-morti-e-feriti-b61f6c3d-5738-4d42-b00d-f738ee10f342.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/video/2026/06/auto-finisce-in-un-canale-in-provincia-di-milano-tre-morti-6e23e753-e988-4500-b274-572bd7523f19.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="auto travolge ciclisti: morte di una donna a monreale"
+         data-summary="un&#39;auto ha investito un gruppo di ciclisti vicino pioppo, in provincia di palermo, uccidendo una donna e ferendone un altro. il conducente, che ha superato la linea continua per sorpassare altri veicoli, è stato identificato come giuseppe lucia, 38 anni. la vittima era mirela nicoletta rusu, 41 anni. indagini in corso con la procura guidata da maurizio de lucia."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/26.html">Auto travolge ciclisti: morte di una donna a Monreale</a>
+        </div>
+        <div class="story-card-summary">Un&#39;auto ha investito un gruppo di ciclisti vicino Pioppo, in provincia di Palermo, uccidendo una donna e ferendone un altro. Il conducente, che ha superato la linea continua per sorpassare altri veicoli, è stato identificato come Giuseppe Lucia, 38 anni. La vittima era Mirela Nicoletta Rusu, 41 anni. Indagini in corso con la Procura guidata da Maurizio de Lucia.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/2026/06/auto-travolge-gruppo-di-ciclisti-una-e-morta-57d2bae6-a494-4906-82f7-1a4d6789f6a2.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/nazionale/auto-travolge-gruppo-ciclisti-muore-donna-41-anni-due-feriti-2682200.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/20/asaps-nel-2026-sono-gia-morti-cento-ciclisti-sulle-strade_0e65da1c-8e0a-495f-9591-047391ec5db0.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/articoli/ultimora/auto-falcia-ciclisti-muore-una-donna-ba56a44f-fd5b-4551-8f82-48e9c750fcc3.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="epidemia di ebola supera i mille casi in congo"
+         data-summary="in repubblica democratica del congo è stata superata la soglia dei mille casi di ebola, con un tasso di letalità del 25,3%. le autorità locali intensificano le operazioni per contrastare l&#39;epidemia. l&#39;italia si prepara a una fase di calore estrema dovuta all&#39;anticiclone sub-tropicale."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/35.html">Epidemia di Ebola supera i mille casi in Congo</a>
+        </div>
+        <div class="story-card-summary">In Repubblica democratica del Congo è stata superata la soglia dei mille casi di Ebola, con un tasso di letalità del 25,3%. Le autorità locali intensificano le operazioni per contrastare l&#39;epidemia. L&#39;Italia si prepara a una fase di calore estrema dovuta all&#39;anticiclone sub-tropicale.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.adnkronos.com/internazionale/esteri/ebola-in-congo-casi-e-vittime-ultime-news_40uEJsdtNs7wlawQCJ88JG" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/meteo-e-clima/quaranta-gradi-giorno-notti-tropicali-i-rischi-dell-2682239.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/etiopia-elezioni-dallesito-scontato-e-una-visione-che-si-radica-quella-di-abiy-ahmed" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="ondata di calore in europa: allerta rossa in francia"
+         data-summary="in francia, oltre 35 milioni di persone sono sotto allerta rossa per un&#39;ondata di calore intensa e precoce, con temperature fino a 41 gradi. in gran bretagna e spagna si prevedono nuove ondate di calore. la &#39;festa della musica&#39; in francia rischia di essere annullata per motivi meteorologici."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/41.html">Ondata di calore in Europa: allerta rossa in Francia</a>
+        </div>
+        <div class="story-card-summary">In Francia, oltre 35 milioni di persone sono sotto allerta rossa per un&#39;ondata di calore intensa e precoce, con temperature fino a 41 gradi. In Gran Bretagna e Spagna si prevedono nuove ondate di calore. La &#39;Festa della Musica&#39; in Francia rischia di essere annullata per motivi meteorologici.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.adnkronos.com/internazionale/esteri/caldo-francia-temperature-torride_6wjfCBxza5FajZ9NvMHyrN" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/mondo/2026/06/21/ondata-di-caldo-anche-in-francia-vietato-il-consumo-di-alcol-nelle-zone-in-allerta_7f7556e2-93a8-4371-b4ee-e1d0608117cf.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/leuropa-boccheggia-londata-di-calore-francia-rovente-picchi-di-45-gradi-e-allerta-rossa-il-meteo-709b4d16-3dd8-4307-bdf5-3068d6ed21a1.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="meloni archivia polemica con trump"
+         data-summary="giorgia meloni ha scelto di non rispondere alle critiche di donald trump dopo il g7, concentrandosi sulle attività in friuli. il governo prova a ricucire i rapporti con gli stati uniti. le reazioni americane sono state ampie e la vicenda è diventata un tema pubblico negli usa."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/42.html">Meloni archivia polemica con Trump</a>
+        </div>
+        <div class="story-card-summary">Giorgia Meloni ha scelto di non rispondere alle critiche di Donald Trump dopo il G7, concentrandosi sulle attività in Friuli. Il governo prova a ricucire i rapporti con gli Stati Uniti. Le reazioni americane sono state ampie e la vicenda è diventata un tema pubblico negli USA.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.adnkronos.com/politica/meloni-trump-italia-usa-alpini-oggi_3lT5NjJeodmlegI2ha9sHV" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://formiche.net/2026/06/contesa-xi-trump-america-latina/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Formiche">
+    
+      <img class="logo-light" src="assets/logos/formiche.png" alt="Formiche">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/la-rottura-con-lamica-fa-rumore-sui-media-usa" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="incendio a santo domingo: muore turista italiana francesca valentino"
+         data-summary="un incendio nel resort viva dominicus beach a bayahibe, repubblica dominicana, ha ucciso la casertana francesca valentino. la donna era in vacanza con il marito e le due figlie. l&#39;incendio è stato devastante, costringendo l&#39;evacuazione di 1.700 persone. le autorità italiane hanno fornito assistenza ai connazionali rientrati."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/49.html">Incendio a Santo Domingo: muore turista italiana Francesca Valentino</a>
+        </div>
+        <div class="story-card-summary">Un incendio nel resort Viva Dominicus Beach a Bayahibe, Repubblica Dominicana, ha ucciso la casertana Francesca Valentino. La donna era in vacanza con il marito e le due figlie. L&#39;incendio è stato devastante, costringendo l&#39;evacuazione di 1.700 persone. Le autorità italiane hanno fornito assistenza ai connazionali rientrati.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/20/turista-morta-in-incendio-in-resort-dalla-passione-per-la-danza-ai-viaggi_d95b2856-652a-4c24-a48a-1dea38ffee9c.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/video/2026/06/inferno-di-fuoco-nel-resort-a-santo-domingo-muore-una-turista-italiana-di-46-anni-10b851e1-f920-4609-937a-b331727e05cc.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-20/francesca-valentino-chi-e-vittima-incendio-santo-domingo-37654807/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="pride di roma: murale satirico e tensione con adinolfi"
+         data-summary="a roma pride 2026, l&#39;artista alexsandro palombo ha realizzato un murale satirico intitolato roman pride che rielabora la famosa scena di vacanze romane con un miliziano di hamas sostituendo gregory peck. simultaneamente, a piazza della repubblica, il leader del popolo della famiglia mario adinolfi ha sventolato una bandiera israeliana provocando insulti dai manifestanti. la polizia è intervenuta per prevenire ulteriori tensioni."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/50.html">Pride di Roma: murale satirico e tensione con Adinolfi</a>
+        </div>
+        <div class="story-card-summary">A Roma Pride 2026, l&#39;artista aleXsandro Palombo ha realizzato un murale satirico intitolato Roman Pride che rielabora la famosa scena di Vacanze Romane con un miliziano di Hamas sostituendo Gregory Peck. Simultaneamente, a Piazza della Repubblica, il leader del Popolo della Famiglia Mario Adinolfi ha sventolato una bandiera israeliana provocando insulti dai manifestanti. La polizia è intervenuta per prevenire ulteriori tensioni.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/20/roma-pride-audrey-hepburn-e-un-miliziano-di-hamas-nel-murale-di-alexsandro-palombo_82177ca0-ce33-4fce-ac05-9cbbc8721229.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/il-pride-2026-invade-roma-la-repubblica-siamo-noi" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-20/adinolfi-roma-pride-provocazione-37659915/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>3</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="raid israeliani in libano: 7 morti"
+         data-summary="in libano, nuovi raid israeliani hanno causato la morte di sette persone nel sud del paese. netanyahu ha ordinato lo stop ai raid ma non al ritiro dal territorio. il numero totale di vittime rimane incerto."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/15.html">Raid israeliani in Libano: 7 morti</a>
+        </div>
+        <div class="story-card-summary">In Libano, nuovi raid israeliani hanno causato la morte di sette persone nel Sud del Paese. Netanyahu ha ordinato lo stop ai raid ma non al ritiro dal territorio. Il numero totale di vittime rimane incerto.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/ultimora/libano-proseguono-raid-israele-7-morti-b1552178-d980-421a-b166-7e76195ae8ad.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/libano-netanyahu-fa-strage-cento-vittime-in-due-giorni" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/video/2026/06/netanyahu-ordina-stop-raid-in-libano-ma-nessun-ritiro-dal-sud-del-paese-c423dbd0-1614-4ab6-bba1-ed25570fe637.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/ultimora/raid-israele-a-gaza-ucciso-cameraman--b09b2cee-cf1a-406d-9417-e1b9a39ea034.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/ultimora/libano-netanyahu-ordina-cessate-fuoco--3b9ed2d3-51ae-47e0-9b44-31d249711e35.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="turismo e export: italia supera record ma affronta aumenti dei prezzi"
+         data-summary="il turismo italiano ha registrato un incremento significativo, con l&#39;italia che supera il giappone nell&#39;export mondiale. tuttavia, i costi delle vacanze sono in aumento per gli italiani. le politiche governative mirano a mantenere la crescita economica e a proteggere le famiglie dal peso dell&#39;inflazione."
+         data-category="economia">
+      <div class="story-card-body">
+        <div class="story-card-category">Economia</div>
+        <div class="story-card-headline">
+          <a href="story/19.html">Turismo e export: Italia supera record ma affronta aumenti dei prezzi</a>
+        </div>
+        <div class="story-card-summary">Il turismo italiano ha registrato un incremento significativo, con l&#39;Italia che supera il Giappone nell&#39;export mondiale. Tuttavia, i costi delle vacanze sono in aumento per gli italiani. Le politiche governative mirano a mantenere la crescita economica e a proteggere le famiglie dal peso dell&#39;inflazione.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/cittadini/cnpr-forum-turismo-record-vacanze-sempre-pi-care-italiani-2682461.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://formiche.net/2026/06/distribuire-valore-turistico-scrive-monti/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Formiche">
+    
+      <img class="logo-light" src="assets/logos/formiche.png" alt="Formiche">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.ilgiornale.it/news/politica-economica/campioni-export-meriti-dimpresa-2682360.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+    <a href="https://www.ilgiornale.it/news/economia/quale-brutto-anatroccolo-pmi-strategiche-2682311.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="salvini promuove gazebo a milano per scelta candidato sindaco"
+         data-summary="matteo salvini ha organizzato gazebo a milano per ascoltare i cittadini e scegliere il candidato sindaco. la vicesegretaria della lega, silvia sardone, è tra i nomi indicati. salvini critica la sinistra e promuove un dialogo con le periferie."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/22.html">Salvini promuove gazebo a Milano per scelta candidato sindaco</a>
+        </div>
+        <div class="story-card-summary">Matteo Salvini ha organizzato gazebo a Milano per ascoltare i cittadini e scegliere il candidato sindaco. La vicesegretaria della Lega, Silvia Sardone, è tra i nomi indicati. Salvini critica la sinistra e promuove un dialogo con le periferie.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/gazebo-salvini-incorona-silvia-sardone-nome-che-mi-piace-2682330.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/politica/news/2026-06-20/milano-sindaco-salvini-lega-37655808/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.ilgiornale.it/news/lisa-attacca-mia-lista-fa-paura-2682331.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+    <a href="https://www.ilgiornale.it/news/politica/salvini-primarie-e-viminale-sto-bene-qui-lega-oltre-10-2682019.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="incendio domato all&#39;ospedale del mare di napoli"
+         data-summary="un incendio ha interessato l&#39;ospedale del mare a napoli, causando l&#39;evacuazione precauzionale dei reparti d&#39;urgenza ma senza feriti. le fiamme sono state domate grazie all&#39;intervento dei vigili del fuoco."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/24.html">Incendio domato all&#39;ospedale del Mare di Napoli</a>
+        </div>
+        <div class="story-card-summary">Un incendio ha interessato l&#39;ospedale del Mare a Napoli, causando l&#39;evacuazione precauzionale dei reparti d&#39;urgenza ma senza feriti. Le fiamme sono state domate grazie all&#39;intervento dei vigili del fuoco.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-21/napoli-ospedale-mare-incendio-fiamme-37670015/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/fiamme-allospedale-del-mare-di-napoli-paura-ma-nessun-ferito_33012bf2-8eda-4eb7-a081-57480fca2110.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/crolla-casa-nellanconetano-una-persona-estratta-viva-dai-vigili-del_43606d23-ad07-4b93-9974-382a7dfb96fb.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/20/incendio-in-resort-testimone-non-e-scattato-alcun-allarme_35552e4d-5b0f-4446-9cfc-2eda608c14dc.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="primarie lega: salvini e sardone i più votati a milano"
+         data-summary="nelle primarie della lega a milano, matteo salvini e silvia sardone hanno ottenuto i maggiori voti. i risultati indicano una volontà di cambiamento nella città dopo il mandato di beppe sala."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/32.html">Primarie Lega: Salvini e Sardone i più votati a Milano</a>
+        </div>
+        <div class="story-card-summary">Nelle primarie della Lega a Milano, Matteo Salvini e Silvia Sardone hanno ottenuto i maggiori voti. I risultati indicano una volontà di cambiamento nella città dopo il mandato di Beppe Sala.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/interni/primarie-lega-indicazioni-dei-milanesi-sono-chiare-salvini-e-2682482.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://formiche.net/2026/06/la-nuova-e-necessaria-margherita-merlo/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Formiche">
+    
+      <img class="logo-light" src="assets/logos/formiche.png" alt="Formiche">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.ilgiornale.it/news/letteratura/bagatelle-allitaliana-premio-mari-e-murgia-2682244.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="mosca attaccata da droni ucraini"
+         data-summary="gli aeroporti di mosca sono stati chiusi per quasi tre ore dopo l&#39;intercettazione di numerosi droni ucraini, distrutti circa 70. un membro dell&#39;equipaggio di una nave in mar nero è morto durante un attacco con drone. bombardamenti russi hanno causato vittime a zaporizhzhia e odessa."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/34.html">Mosca attaccata da droni ucraini</a>
+        </div>
+        <div class="story-card-summary">Gli aeroporti di Mosca sono stati chiusi per quasi tre ore dopo l&#39;intercettazione di numerosi droni ucraini, distrutti circa 70. Un membro dell&#39;equipaggio di una nave in Mar Nero è morto durante un attacco con drone. Bombardamenti russi hanno causato vittime a Zaporizhzhia e Odessa.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/video/2026/06/mosca-attacco-ucraino-sulla-capitale-russa-distrutti-70-droni-che-hanno-preso-di-mira-la-citta-il-video-del-raid-c1191770-50dc-4d12-aa7f-dad50446990c.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.adnkronos.com/internazionale/esteri/guerra-ucraina-russia-news-oggi-ultime-notizie-e-aggiornamenti_3IHzW12FMMKAbBNUM5Jw4w" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/articoli/ultimora/ucraina-drone-su-cargo-in-mar-nero-un-morto-15579add-92ad-4639-95c1-7c1671cf3eef.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="anticiclone subtropicale porta caldo intenso in italia"
+         data-summary="un anticiclone subtropicale porterà temperature elevate fino a 40 gradi, soprattutto nel nord e nelle regioni tirreniche, per i prossimi giorni. le notti rimarranno super tropicali. la situazione meteo sarà stabile con occasionali temporali sui settori alpini e appenninici."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/37.html">Anticiclone subtropicale porta caldo intenso in Italia</a>
+        </div>
+        <div class="story-card-summary">Un anticiclone subtropicale porterà temperature elevate fino a 40 gradi, soprattutto nel Nord e nelle regioni tirreniche, per i prossimi giorni. Le notti rimarranno super tropicali. La situazione meteo sarà stabile con occasionali temporali sui settori alpini e appenninici.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.adnkronos.com/cronaca/caldo-record-anomalo-estate-bollente-previsioni-meteo-ultime-news_IMzeiifwoEmCBVjU6JoeP" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/video/2026/06/le-previsioni-del-tempo-per-lunedi-22-giugno-meteo-che-tempo-fara-oggi-in-italia-6a2931cd-17ca-4aca-bea0-f30582def330.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/articoli/2026/06/cerberus-attanaglia-litalia-meteo-e-caldo-record-a-40c-2db2ba8c-ff46-4fb0-b977-51ef30b074ee.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="meloni partecipa a raduno degli alpini in friuli"
+         data-summary="giorgia meloni ha visitato il raduno nazionale delle penne nere a gemona del friuli, ringraziando gli alpini e consegnando un riconoscimento. la visita è stata sorpresa e si inserisce nel contesto della commemorazione del terremoto del 1976."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/46.html">Meloni partecipa a raduno degli Alpini in Friuli</a>
+        </div>
+        <div class="story-card-summary">Giorgia Meloni ha visitato il raduno nazionale delle Penne Nere a Gemona del Friuli, ringraziando gli Alpini e consegnando un riconoscimento. La visita è stata sorpresa e si inserisce nel contesto della commemorazione del terremoto del 1976.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.agi.it/politica/news/2026-06-21/meloni-orgoglio-nazionale-alpini-37667279/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/20/oggi-onda-pride-2026-cortei-in-sei-citta_7ce354fa-e94c-4c5f-b124-2dfe9dd459c0.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.agi.it/politica/news/2026-06-21/meloni-raduno-alpini-gemona-37665291/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="AGI">
+      
+        <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+        
+          <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/terza-giornata-raduno-alpini-triveneto-con-premier-meloni_86e519f6-b39c-4c7f-bdf2-044bd77e2af5.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="spagna: moglie di sanchez rinviata a giudizio e privata del passaporto"
+         data-summary="begoña gómez, moglie del premier pedro sánchez, è stata rinviata a giudizio per corruzione e traffico di influenze. ha perso il passaporto e dovrà presentarsi ogni 15 giorni in commissariato. il caso è stato avviato su denuncia dell&#39;organizzazione manos limpias."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/53.html">Spagna: moglie di Sanchez rinviata a giudizio e privata del passaporto</a>
+        </div>
+        <div class="story-card-summary">Begoña Gómez, moglie del premier Pedro Sánchez, è stata rinviata a giudizio per corruzione e traffico di influenze. Ha perso il passaporto e dovrà presentarsi ogni 15 giorni in commissariato. Il caso è stato avviato su denuncia dell&#39;organizzazione Manos Limpias.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://ilmanifesto.it/spagna-per-la-moglie-di-sanchez-rinvio-a-giudizio-e-niente-passaporto" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/ultimora/spagna-a-processo-la-moglie-di-sanchez-2759b8c9-f34b-4e8b-ad34-7aa3f7d9d5c0.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/articoli/2026/06/spagna-begona-gomez-moglie-del-premier-sanchez-a-processo-ritirato-passaporto-4bd4fe0a-12af-49d2-b025-6ba35603201d.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="udienza preliminare elkann rinviata all&#39;11 settembre"
+         data-summary="la giudice irene giani ha rinviato l&#39;udienza preliminare per john elkann all&#39;11 settembre. margherita agnelli, figlia di gianni agnelli e vedova di marella caracciolo, ha chiesto di costituirsi parte civile contro elkann per danni morali e immateriali. la difesa di elkann ha contestato la richiesta."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/55.html">Udienza preliminare Elkann rinviata all&#39;11 settembre</a>
+        </div>
+        <div class="story-card-summary">La giudice Irene Giani ha rinviato l&#39;udienza preliminare per John Elkann all&#39;11 settembre. Margherita Agnelli, figlia di Gianni Agnelli e vedova di Marella Caracciolo, ha chiesto di costituirsi parte civile contro Elkann per danni morali e immateriali. La difesa di Elkann ha contestato la richiesta.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/eredita-agnelli-l11-settembre-per-john-elkann/8425885/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/22/udienza-preliminare-per-elkann-margherita-vuole-essere-parte-civile_d6cc4250-2414-4e13-a868-5e8187a12b0f.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="vicesindaco di stella si dimette dopo video con saluto fascista"
+         data-summary="il vicesindaco maurizio donati di stella (savona) ha rassegnato le proprie dimissioni dopo che un video lo ha mostrato danzando con il braccio teso in saluto fascista. la decisione è stata presa dopo una discussione con il sindaco andrea castellini e la reazione dell&#39;anpi savonese, che ha definito l&#39;incidente &#39;gravissimo&#39;."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/56.html">Vicesindaco di Stella si dimette dopo video con saluto fascista</a>
+        </div>
+        <div class="story-card-summary">Il vicesindaco Maurizio Donati di Stella (Savona) ha rassegnato le proprie dimissioni dopo che un video lo ha mostrato danzando con il braccio teso in saluto fascista. La decisione è stata presa dopo una discussione con il sindaco Andrea Castellini e la reazione dell&#39;Anpi savonese, che ha definito l&#39;incidente &#39;gravissimo&#39;.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/22/vicesindaco-paese-di-pertini-fa-saluto-fascista-in-video-sui-social-si-dimette_c3532d62-00ab-490e-848f-fd699bab5f37.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/saluto-fascista-stella-pertini-vicesindaco-dimissioni-notizie/8425823/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="incidenti a bordo e strage stradale"
+         data-summary="un volo della american airlines ha avuto un incidente a bordo con un passeggero in stato alterato che ha morso un compagno di viaggio. simultaneamente, una giovane è deceduta in seguito a un incidente stradale causato da una guida neopatentata. le indagini stanno avendo luogo per accertare le circostanze esatte degli eventi."
+         data-category="cronaca nera">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca Nera</div>
+        <div class="story-card-headline">
+          <a href="story/58.html">Incidenti a bordo e strage stradale</a>
+        </div>
+        <div class="story-card-summary">Un volo della American Airlines ha avuto un incidente a bordo con un passeggero in stato alterato che ha morso un compagno di viaggio. Simultaneamente, una giovane è deceduta in seguito a un incidente stradale causato da una guida neopatentata. Le indagini stanno avendo luogo per accertare le circostanze esatte degli eventi.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/forse-ha-le-allucinazioni-ha-appena-morso-un-passeggero-e-sta-cercando-di-picchiare-tutti-a-bordo-dellaereo-scoppia-il-caos-pilota-costretto-a-lanciare-lallarme-alla-torre-di-controllo/8425862/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/politica/ve-giuro-questa-morta-laudio-dellorrore-schianto-2682026.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="egitto vince contro nuova zelanda in rimonta nel mondiale 2026"
+         data-summary="nella seconda giornata del gruppo g, l&#39;egitto ha sconfitto la nuova zelanda per 3-1. mohamed salah ha segnato il gol della vittoria dopo una rimonta nella ripresa. l&#39;egitto salta a 4 punti e guida la classifica."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/60.html">Egitto vince contro Nuova Zelanda in rimonta nel Mondiale 2026</a>
+        </div>
+        <div class="story-card-summary">Nella seconda giornata del Gruppo G, l&#39;Egitto ha sconfitto la Nuova Zelanda per 3-1. Mohamed Salah ha segnato il gol della vittoria dopo una rimonta nella ripresa. L&#39;Egitto salta a 4 punti e guida la classifica.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/sport/calcio/speciali/mondiale-calcio-2026/2026/06/22/ansa-boxsalah-fa-volare-legitto-vittoria-in-rimonta-sulla-nuova-zelanda_38ff5034-9d18-4f0e-aa1d-38588376cd21.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.adnkronos.com/sport/nuova-zelanda-egitto-oggi-mondiali-risultato_2kSAecRazJif6VBHeomOJN" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="prezzi estremi dell&#39;estate 2026 in italia"
+         data-summary="un&#39;indagine del codacons ha rilevato prezzi record per alloggi durante l&#39;estate 2026, con una settimana a firenze che può costare fino a 297.714 euro e una tenda in puglia 238.000 euro. l&#39;associazione dei consumatori ha evidenziato anomalie nel mercato turistico italiano."
+         data-category="economia">
+      <div class="story-card-body">
+        <div class="story-card-category">Economia</div>
+        <div class="story-card-headline">
+          <a href="story/66.html">Prezzi estremi dell&#39;estate 2026 in Italia</a>
+        </div>
+        <div class="story-card-summary">Un&#39;indagine del Codacons ha rilevato prezzi record per alloggi durante l&#39;estate 2026, con una settimana a Firenze che può costare fino a 297.714 euro e una tenda in Puglia 238.000 euro. L&#39;associazione dei consumatori ha evidenziato anomalie nel mercato turistico italiano.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/238-mila-euro-per-dormire-una-settimana-in-tenda-in-salento-300-mila-per-un-appartamento-nel-centro-di-firenze-la-classifica-dei-prezzi-piu-folli-dellestate-2026/8425830/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/economia/2026/06/21/codacons-i-prezzi-pazzi-dellestate-300mila-euro-per-un-alloggio-a-firenze_f9b1aeab-f238-4233-a29d-004ccae58aa6.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="caldo torrido in francia: dieci morti per annegamento"
+         data-summary="in francia sono state registrate dieci vittime per annegamento durante un&#39;onda di calore estrema, che ha colpito anche parigi. le autorità esortano a fare il bagno solo in luoghi sorvegliati e prevedono misure cautelative nel settore dei trasporti pubblici."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/67.html">Caldo torrido in Francia: dieci morti per annegamento</a>
+        </div>
+        <div class="story-card-summary">In Francia sono state registrate dieci vittime per annegamento durante un&#39;onda di calore estrema, che ha colpito anche Parigi. Le autorità esortano a fare il bagno solo in luoghi sorvegliati e prevedono misure cautelative nel settore dei trasporti pubblici.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/2026/06/caldo-torrido-in-francia-ieri-dieci-morti-per-annegamento-e-ancora-allerta-rossa-ondata-di-caldo-sulleuropa-f7815975-7a26-4b1c-9a85-374d6d77f58e.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/topnews/2026/06/22/caldo-torrido-in-francia-ieri-dieci-morti-per-annegamento_f7919492-aa80-4f78-9883-ecaa1827acde.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="prezzi carburanti continuano a calare: minimo 1,835 euro/l per benzina"
+         data-summary="i prezzi dei carburanti si sono ulteriormente ridotti con valori medi di 1,835 euro/l per la benzina e 1,930 euro/l per il gasolio. in parallelo, l&#39;agenzia delle entrate ha annunciato nuove linee guida per il bonus climatizzatori, che può essere utilizzato anche senza ristrutturazioni, ma con requisiti di efficienza energetica e procedura di pagamento specifici."
+         data-category="economia">
+      <div class="story-card-body">
+        <div class="story-card-category">Economia</div>
+        <div class="story-card-headline">
+          <a href="story/72.html">Prezzi carburanti continuano a calare: minimo 1,835 euro/l per benzina</a>
+        </div>
+        <div class="story-card-summary">I prezzi dei carburanti si sono ulteriormente ridotti con valori medi di 1,835 euro/l per la benzina e 1,930 euro/l per il gasolio. In parallelo, l&#39;Agenzia delle Entrate ha annunciato nuove linee guida per il bonus climatizzatori, che può essere utilizzato anche senza ristrutturazioni, ma con requisiti di efficienza energetica e procedura di pagamento specifici.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.adnkronos.com/economia/carburanti-prezzi-quanto-costano-oggi-benzina-e-diesel_3nPivp9bBQ3Mx0fC1yHvkP" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/bonus-condizionatori-2026-detrazioni-al-50-anche-senza-ristrutturazioni-ecco-come-ottenerlo-f9cdb7b0-753d-4d8f-875d-645d581bd0e2.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="incendio vasto a sarno colpisce azienda di plastica"
+         data-summary="un incendio vasto ha colpito la notte scorsa un&#39;azienda specializzata in lavorazione della plastica nella zona industriale di sarno. le fiamme hanno interessato un capannone di circa 5.000 metri quadrati, sprigionando una densa nube di fumo visibile per chilometri. sul posto sono intervenuti vigili del fuoco e forze dell&#39;ordine. l&#39;intervento è tuttora in corso senza risultati su possibili feriti o le cause dell&#39;incendio."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/73.html">Incendio vasto a Sarno colpisce azienda di plastica</a>
+        </div>
+        <div class="story-card-summary">Un incendio vasto ha colpito la notte scorsa un&#39;azienda specializzata in lavorazione della plastica nella zona industriale di Sarno. Le fiamme hanno interessato un capannone di circa 5.000 metri quadrati, sprigionando una densa nube di fumo visibile per chilometri. Sul posto sono intervenuti vigili del fuoco e forze dell&#39;ordine. L&#39;intervento è tuttora in corso senza risultati su possibili feriti o le cause dell&#39;incendio.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/22/maxi-incendio-a-sarno-in-fiamme-azienda-che-lavora-la-plastica_8f4f92b1-07c8-4249-bda4-b51ed3475ff2.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/video/2026/06/maxi-incendio-in-una-fabbrica-di-sarno-alta-colonna-di-fumo-visibile-per-chilometri-376e457f-e465-4a25-88ad-9123b205ccc7.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="smart #2: nuova citycar elettrica a due posti presentata a roma"
+         data-summary="a roma è stata svelata la versione interna della smart #2, una citycar elettrica a due posti. l&#39;azienda mira a mantenere le dimensioni contenute e adattarsi alle città congestionate, con un prototipo che anticipa il modello definitivo presentato a parigi entro l&#39;anno. la piattaforma eca supporta una batteria di 35,7 kwh e un&#39;autonomia di 300 chilometri."
+         data-category="altro">
+      <div class="story-card-body">
+        <div class="story-card-category">Altro</div>
+        <div class="story-card-headline">
+          <a href="story/77.html">Smart #2: nuova citycar elettrica a due posti presentata a Roma</a>
+        </div>
+        <div class="story-card-summary">A Roma è stata svelata la versione interna della Smart #2, una citycar elettrica a due posti. L&#39;azienda mira a mantenere le dimensioni contenute e adattarsi alle città congestionate, con un prototipo che anticipa il modello definitivo presentato a Parigi entro l&#39;anno. La piattaforma ECA supporta una batteria di 35,7 kWh e un&#39;autonomia di 300 chilometri.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilfattoquotidiano.it/2026/06/22/smart-torna-alle-origini-a-roma-svelati-gli-interni-della-nuova-concept-2-foto/8425752/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Fatto Quotidiano">
+    
+      <img class="logo-light" src="assets/logos/ilfatto.png" alt="Il Fatto Quotidiano">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/automotive/smart-2-torna-regina-dei-parcheggi-impossibili-2682453.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="sanità italiana: crisi e riforme in discussione"
+         data-summary="lavoce.info ha intervistato nerina dirindin sull&#39;attuale situazione della sanità italiana, evidenziando problemi come liste d&#39;attesa e carenza di personale. il tar del lazio ha respinto un ricorso contro il semestre filtro universitario, affermando che non viola l&#39;autonomia universitaria."
+         data-category="economia">
+      <div class="story-card-body">
+        <div class="story-card-category">Economia</div>
+        <div class="story-card-headline">
+          <a href="story/79.html">Sanità italiana: crisi e riforme in discussione</a>
+        </div>
+        <div class="story-card-summary">Lavoce.info ha intervistato Nerina Dirindin sull&#39;attuale situazione della sanità italiana, evidenziando problemi come liste d&#39;attesa e carenza di personale. Il Tar del Lazio ha respinto un ricorso contro il semestre filtro universitario, affermando che non viola l&#39;autonomia universitaria.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://lavoce.info/archives/111607/lo-stato-di-salute-della-sanita-italiana/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="La Voce">
+    
+      La Voce
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/20/medicina-tar-respinge-ricorso-prof-semestre-filtro-non-lede-autonomia_04b819e9-a176-4aac-9fcf-d445c98f7adf.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="tajani difende relazioni italia-stati uniti"
+         data-summary="il ministro degli esteri antonio tajani ha sottolineato che l&#39;italia rimane un alleato dei stati uniti, nonostante le critiche di donald trump. tajani ha annunciato la partecipazione a un ricevimento per i 250 anni degli stati uniti e ha enfatizzato la necessità di gestire il rapporto con maturità."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/80.html">Tajani difende relazioni Italia-Stati Uniti</a>
+        </div>
+        <div class="story-card-summary">Il ministro degli Esteri Antonio Tajani ha sottolineato che l&#39;Italia rimane un alleato dei Stati Uniti, nonostante le critiche di Donald Trump. Tajani ha annunciato la partecipazione a un ricevimento per i 250 anni degli Stati Uniti e ha enfatizzato la necessità di gestire il rapporto con maturità.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.agi.it/estero/news/2026-06-22/tajani-usa-italia-non-sudditi-37675191/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/ultimora/tajani-relazioni-con-usa-restano-solide-69a34e53-1bbc-425a-b8e0-96c8f6aad0a2.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="genetista sottolinea obiettivo di ricerca della verità"
+         data-summary="denise albani, genetista e perita del gip di pavia, rivela che il suo unico obiettivo è contribuire alla ricerca della verità nell&#39;indagine su chiara poggi. la sua dichiarazione contrasta con una polemica sui ruoli dei genitori durante la nascita di un bambino."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/82.html">Genetista sottolinea obiettivo di ricerca della verità</a>
+        </div>
+        <div class="story-card-summary">Denise Albani, genetista e perita del Gip di Pavia, rivela che il suo unico obiettivo è contribuire alla ricerca della verità nell&#39;indagine su Chiara Poggi. La sua dichiarazione contrasta con una polemica sui ruoli dei genitori durante la nascita di un bambino.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/calcio/quesito-aspiranti-mantidi-religiose-2682447.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/video/2026/06/caso-garlasco-delitto-chiara-poggi-genetista-mio-unico-obiettivo-dare-contributo-alla-ricerca-della-verita-67a35c31-9b24-4453-aa39-bb33140d6f19.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="tunisino ferisce gravemente un uomo durante festeggiamenti in provincia di pavia"
+         data-summary="un immigrato tunisino ha irruzione a una festa armato e ha causato gravi ferite all&#39;addome a un 43enne che si è frapposto tra l&#39;aggressore e la figlia. l&#39;uomo, in gravi condizioni, è stato rianimato in strada e trasferito all&#39;ospedale di novara. le indagini sono state affidate ai carabinieri."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/83.html">Tunisino ferisce gravemente un uomo durante festeggiamenti in provincia di Pavia</a>
+        </div>
+        <div class="story-card-summary">Un immigrato tunisino ha irruzione a una festa armato e ha causato gravi ferite all&#39;addome a un 43enne che si è frapposto tra l&#39;aggressore e la figlia. L&#39;uomo, in gravi condizioni, è stato rianimato in strada e trasferito all&#39;ospedale di Novara. Le indagini sono state affidate ai carabinieri.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/nazionale/tunisino-fa-irruzione-festa-armato-ascia-e-coltello-2682444.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/ferito-alladdome-con-unascia-durante-una-festa-nel-pavese-43enne_ead9bf31-41df-44a6-8112-d4058630bc8e.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="agenda ue: riunioni su clima, ucraina e relazioni con cina"
+         data-summary="l&#39;unione europea si riunisce per discutere di vari temi internazionali e politici, tra cui il clima, l&#39;ucraina e le relazioni con la cina. vengono organizzate conferenze su politica economica e bilancio."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/84.html">Agenda UE: riunioni su clima, Ucraina e relazioni con Cina</a>
+        </div>
+        <div class="story-card-summary">L&#39;Unione Europea si riunisce per discutere di vari temi internazionali e politici, tra cui il clima, l&#39;Ucraina e le relazioni con la Cina. Vengono organizzate conferenze su politica economica e bilancio.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/europa/notizie/rubriche/agenda/2026/06/22/euroagenda-avvenimenti-dal-22-al-28-giugno-_7b4d247e-c678-4492-979c-dd639f49c118.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-20/consiglio-europeo-ue-unita-37647391/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="celebrazione della giornata dello yoga in bhaktapur e lignano sabbiadoro"
+         data-summary="in nepal, centinaia di persone hanno celebrato la giornata internazionale dello yoga a bhaktapur, con una sessione collettiva nella durbar square. in italia, particolarmente a lignano sabbiadoro, si offrono vari rituali rigeneranti per promuovere la pratica dello yoga durante l&#39;estate."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/87.html">Celebrazione della Giornata dello Yoga in Bhaktapur e Lignano Sabbiadoro</a>
+        </div>
+        <div class="story-card-summary">In Nepal, centinaia di persone hanno celebrato la Giornata internazionale dello Yoga a Bhaktapur, con una sessione collettiva nella Durbar Square. In Italia, particolarmente a Lignano Sabbiadoro, si offrono vari rituali rigeneranti per promuovere la pratica dello Yoga durante l&#39;estate.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/video/2026/06/saluto-al-sole-tra-i-templi-il-nepal-celebra-la-giornata-dello-yoga-8ec83880-8f78-45a8-a911-a89207650822.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/canale_viaggi/notizie/green/2026/06/21/yoga-day-viaggi-rigeneranti-in-giro-per-il-mondo_bb05e7b9-798f-4250-82c8-3fa801d59822.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="migranti nel calcio e espulsioni in sudan"
+         data-summary="il giornale ha rilevato che il 23% dei calciatori partecipanti al mondiale sono nati all&#39;estero, mentre l&#39;agi - estero ha notizie sull&#39;espulsione di 12mila stranieri illegali dal sudan. le norme fifa sono diventate più rigide e il fenomeno del calcio migrante è diventato vasto. nel sudan, le autorità hanno condotto operazioni per espellere stranieri &#39;illegali&#39; dopo la riconquista di khartoum."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/88.html">Migranti nel calcio e espulsioni in Sudan</a>
+        </div>
+        <div class="story-card-summary">Il Giornale ha rilevato che il 23% dei calciatori partecipanti al Mondiale sono nati all&#39;estero, mentre l&#39;AGI - Estero ha notizie sull&#39;espulsione di 12mila stranieri illegali dal Sudan. Le norme Fifa sono diventate più rigide e il fenomeno del calcio migrante è diventato vasto. Nel Sudan, le autorità hanno condotto operazioni per espellere stranieri &#39;illegali&#39; dopo la riconquista di Khartoum.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/sport/marocco-congo-c-mondiale-dei-nati-altrove-2682319.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-21/sudan-stranieri-illegali-37660342/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="sentenza di corte d&#39;appello smonta inchiesta mensa dei poveri"
+         data-summary="la corte d&#39;appello ha respinto le accuse della procura, assolvendo la maggior parte degli imputati e riducendo i condanni. la sentenza mette in discussione l&#39;inchiesta originaria e accusa la procura di violazione della legge."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/89.html">Sentenza di Corte d&#39;Appello smonta inchiesta Mensa dei poveri</a>
+        </div>
+        <div class="story-card-summary">La Corte d&#39;Appello ha respinto le accuse della Procura, assolvendo la maggior parte degli imputati e riducendo i condanni. La sentenza mette in discussione l&#39;inchiesta originaria e accusa la Procura di violazione della legge.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/cos-i-giudici-hanno-smontato-linchiesta-mensa-dei-poveri-2682333.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/mario-moretti-da-capo" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="assessore comazzi su urbanistica: ripresa economica e progetti futuri"
+         data-summary="l&#39;assessore al territorio di regione lombardia gianluca comazzi ha convocato un tavolo per la ripresa dell&#39;urbanistica, sottolineando l&#39;importanza di rassicurare gli investitori internazionali. la linea politica di forza italia è stata enfatizzata, con critiche al sindaco giuseppe sala e all&#39;indagine su san siro. per il sindaco, le indagini sono giudiziarie, non politiche."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/90.html">Assessore Comazzi su urbanistica: ripresa economica e progetti futuri</a>
+        </div>
+        <div class="story-card-summary">L&#39;assessore al Territorio di Regione Lombardia Gianluca Comazzi ha convocato un tavolo per la ripresa dell&#39;urbanistica, sottolineando l&#39;importanza di rassicurare gli investitori internazionali. La linea politica di Forza Italia è stata enfatizzata, con critiche al sindaco Giuseppe Sala e all&#39;indagine su San Siro. Per il sindaco, le indagini sono giudiziarie, non politiche.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/sullurbanistica-ora-si-giri-pagina-milano-bloccati-10-2682329.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/20/gli-albergatori-di-venezia-daccordo-con-lintroduzione-di-un-ticket-fino-a-50-euro_5ab31dc1-d8a9-4d4b-8223-da44d2192a8b.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="motogp: marquez vince a brno, bezzecchi squalificato"
+         data-summary="marc marquez ha vinto la gara di motogp in repubblica ceca, riducendo il vantaggio su marco bezzecchi. il pilota aprilia è stato squalificato per aver spinto i commissari dopo una caduta nella sprint race."
+         data-category="altro">
+      <div class="story-card-body">
+        <div class="story-card-category">Altro</div>
+        <div class="story-card-headline">
+          <a href="story/91.html">MotoGP: Marquez vince a Brno, Bezzecchi squalificato</a>
+        </div>
+        <div class="story-card-summary">Marc Marquez ha vinto la gara di MotoGP in Repubblica Ceca, riducendo il vantaggio su Marco Bezzecchi. Il pilota Aprilia è stato squalificato per aver spinto i commissari dopo una caduta nella Sprint Race.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/sport/cannibale-proprio-tornato-due-gran-premi-69-punti-bezzecchi-2682324.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/ultimora/-motogp-bezzecchi-squalificato-a-brno-c7cadfa7-25f9-4701-92b9-94f582a3dcd2.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="consiglio upl discute contributi scuole e centri impiego"
+         data-summary="il consiglio direttivo upl ha discusso i finanziamenti per le scuole e i centri per l&#39;impiego, con stanziamenti regionali di 50 milioni di euro. la regione piemonte intende candidare il quarto stato di pellizza da volpedo alla unesco come patrimonio dell&#39;umanità."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/92.html">Consiglio Upl discute contributi scuole e centri impiego</a>
+        </div>
+        <div class="story-card-summary">Il Consiglio direttivo Upl ha discusso i finanziamenti per le scuole e i Centri per l&#39;impiego, con stanziamenti regionali di 50 milioni di euro. La Regione Piemonte intende candidare Il Quarto Stato di Pellizza da Volpedo alla UNESCO come patrimonio dell&#39;umanità.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/regione-d-i-contributi-scuole-e-impiego-2682328.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cultura/arte/2026/06/20/il-quarto-stato-di-pellizza-da-volpedo-verso-la-candidatura-unesco_07581976-175d-4870-91cc-126bdb7cc030.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="situazione critica in crimea: raid ucraini causano blackout"
+         data-summary="la situazione si aggrava nella crimea occupata dai russi con raid ucraini che provocano interruzioni di energia e sospensione della distribuzione di carburanti. la russia non aspetta l&#39;attuazione degli accordi di anchorage, ma la vittoria nel conflitto ucraino."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/94.html">Situazione critica in Crimea: raid ucraini causano blackout</a>
+        </div>
+        <div class="story-card-summary">La situazione si aggrava nella Crimea occupata dai russi con raid ucraini che provocano interruzioni di energia e sospensione della distribuzione di carburanti. La Russia non aspetta l&#39;attuazione degli accordi di Anchorage, ma la vittoria nel conflitto ucraino.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/video/2026/06/crimea-sempre-piu-critica-la-situazione-raid-ucraini-provocano-blackout-0ab1e7fd-29c5-4e79-8f41-1791bfbc388b.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-21/russia-ucraina-cremlino-accordi-37668110/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="giostra bloccata: otto ragazzini salvati a torinese"
+         data-summary="nel luna park di villanova canavese, otto ragazzini sono rimasti bloccati su una giostra a circa trenta metri dal suolo durante la corsa. i vigili del fuoco e il personale del 118 hanno liberato i bambini in sicurezza senza che si verifichino feriti."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/95.html">Giostra bloccata: otto ragazzini salvati a Torinese</a>
+        </div>
+        <div class="story-card-summary">Nel luna park di Villanova Canavese, otto ragazzini sono rimasti bloccati su una giostra a circa trenta metri dal suolo durante la corsa. I vigili del fuoco e il personale del 118 hanno liberato i bambini in sicurezza senza che si verifichino feriti.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/giostra-bloccata-salvati-otto-ragazzi-a-30-metri-nel-torinese_e72a3609-1670-4775-a3b8-bd0b342905a1.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-21/torino-giostra-bloccata-ragazzini-37664249/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="trump critica italia e nato su posizione contro iran"
+         data-summary="il presidente americano donald trump ha criticato l&#39;italia e la nato per non essere disposti a prendere parte all&#39;azione contro l&#39;iran, dopo aver speso trilioni di dollari per la difesa. la premier giorgia meloni ha mantenuto il silenzio, mentre il ministro degli esteri antonio tajani ha riaffermato i rapporti solidi con gli stati uniti."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/96.html">Trump critica Italia e Nato su posizione contro Iran</a>
+        </div>
+        <div class="story-card-summary">Il presidente americano Donald Trump ha criticato l&#39;Italia e la Nato per non essere disposti a prendere parte all&#39;azione contro l&#39;Iran, dopo aver speso trilioni di dollari per la difesa. La premier Giorgia Meloni ha mantenuto il silenzio, mentre il ministro degli Esteri Antonio Tajani ha riaffermato i rapporti solidi con gli Stati Uniti.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.agi.it/estero/news/2026-06-21/italia-usa-donald-trump-37671566/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/politica/2026/06/21/trump-a-tgcom24-sono-deluso-non-solo-dallitalia-ma-da-tutti-i-leader-della_73e89765-3cf3-454d-ad46-dcf8b60f5847.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="ex marito di nessy guerra scarcerato in egitto"
+         data-summary="tamer hamouda, ex marito di nessy guerra, è stato rilasciato dopo il pagamento della cauzione per un arresto dovuto a minacce al console italiano. nessy e la figlia si trovano in una casa rifugio in egitto, temendo ulteriori violenze da parte dell&#39;uomo."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/100.html">Ex marito di Nessy Guerra scarcerato in Egitto</a>
+        </div>
+        <div class="story-card-summary">Tamer Hamouda, ex marito di Nessy Guerra, è stato rilasciato dopo il pagamento della cauzione per un arresto dovuto a minacce al console italiano. Nessy e la figlia si trovano in una casa rifugio in Egitto, temendo ulteriori violenze da parte dell&#39;uomo.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/scarcerato-il-marito-di-nessy-guerra.-qualcuno-ha-pagato-la-cauzione_581757e4-dd71-4c55-87c9-bee9994b15cd.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/scarcerato-il-marito-di-nessy-guerra-qualcuno-ha-pagato-la-cauzione-poco-piu-di-80-euro-f2f3b5b9-f907-46c1-9968-af9c1346af8d.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="spagna sconfigge arabia saudita 4-0 nel mondiale"
+         data-summary="la spagna ha vinto 4-0 contro l&#39;arabia saudita nel secondo turno del gruppo h dei mondiali 2026. yamal e oyarzabal hanno segnato i gol, mentre la squadra saudita non è riuscita a reagire. la spagna si riscatta dopo il pareggio contro capo verde."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/101.html">Spagna sconfigge Arabia Saudita 4-0 nel Mondiale</a>
+        </div>
+        <div class="story-card-summary">La Spagna ha vinto 4-0 contro l&#39;Arabia Saudita nel secondo turno del Gruppo H dei Mondiali 2026. Yamal e Oyarzabal hanno segnato i gol, mentre la squadra saudita non è riuscita a reagire. La Spagna si riscatta dopo il pareggio contro Capo Verde.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/calcio/spagna-si-riscatta-e-travolge-l-arabia-saudita-primo-gol-ai-2682275.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/ultimora/mondiale-2026-spagna-arabia-saudita-4-0-1abcc1ca-629c-4bb6-bf28-523dc13f2e30.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="trump confonde nella festa del papà"
+         data-summary="il presidente degli stati uniti donald trump ha pubblicato un messaggio sulla festa del papà con una foto di margo catsimatidis, moglie di un amico suo, invece che di ivanka o tiffany. la gaffe è stata rapidamente identificata e commentata su social media."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/102.html">Trump confonde nella Festa del Papà</a>
+        </div>
+        <div class="story-card-summary">Il presidente degli Stati Uniti Donald Trump ha pubblicato un messaggio sulla Festa del Papà con una foto di Margo Catsimatidis, moglie di un amico suo, invece che di Ivanka o Tiffany. La gaffe è stata rapidamente identificata e commentata su social media.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/cronaca-internazionale/figlia-eccezionale-nella-foto-postata-trump-non-ivanka-n-2682272.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/video/2026/06/trump-axios-libro-piu-grande-di-alessandro-magno-e-napoleone-220f6975-f67b-4e74-9a5d-c847e7758d33.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="scontri politici su rapporti italia-usa"
+         data-summary="il dibattito politico italiano si divide tra la difesa dell&#39;alleanza con gli stati uniti da parte del centrodestra e l&#39;attacco alle azioni estere dell&#39;esecutivo da parte delle minoranze. le critiche riguardano la gestione dei rapporti bilaterali, in particolare le tensioni tra giorgia meloni e donald trump."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/105.html">Scontri politici su rapporti Italia-USA</a>
+        </div>
+        <div class="story-card-summary">Il dibattito politico italiano si divide tra la difesa dell&#39;alleanza con gli Stati Uniti da parte del Centrodestra e l&#39;attacco alle azioni estere dell&#39;esecutivo da parte delle minoranze. Le critiche riguardano la gestione dei rapporti bilaterali, in particolare le tensioni tra Giorgia Meloni e Donald Trump.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/video/2026/06/scontro-meloni-trump-la-maggioranza-blinda-alleanza-con-usa-le-minoranze-bocciano-la-premier-fd25dd0c-e4a8-4091-b4b1-dc6e45d2da89.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://formiche.net/2026/06/tre-voci-da-washington-sul-caso-meloni-trump/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Formiche">
+    
+      <img class="logo-light" src="assets/logos/formiche.png" alt="Formiche">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="trump accusa vandali della reflecting pool"
+         data-summary="il presidente degli stati uniti ha denunciato l&#39;attacco alla reflecting pool al lincoln memorial, accusando i vandali di aver danneggiato il rivestimento e le alghe. molti arresti sono stati effettuati, tra cui quello dell&#39;ex atleta olimpico david hearn, che ha negato le accuse."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/107.html">Trump accusa vandali della Reflecting Pool</a>
+        </div>
+        <div class="story-card-summary">Il presidente degli Stati Uniti ha denunciato l&#39;attacco alla Reflecting Pool al Lincoln Memorial, accusando i vandali di aver danneggiato il rivestimento e le alghe. Molti arresti sono stati effettuati, tra cui quello dell&#39;ex atleta olimpico David Hearn, che ha negato le accuse.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/mondo/2026/06/21/keir-starmer-prepara-la-resa.-e-trump-lo-liquida-ha-fallito_3b8a4e81-da33-4c72-926d-87a77dfa23f8.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/trump-molti-arresti-per-i-danni-alla-reflecting-pool-0ca21d6f-30f2-4349-aa70-7b466e5772f5.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="marquez vince a brno e si avvicina al leader"
+         data-summary="marc marquez ha vinto il gran premio di cechia, superando pecco bagnaia in una gara intensa. jorge bezzecchi è stato squalificato per aver aggredito un marshall. marquez si avvicina al primo posto con 40 punti di distanza dal leader."
+         data-category="altro">
+      <div class="story-card-body">
+        <div class="story-card-category">Altro</div>
+        <div class="story-card-headline">
+          <a href="story/110.html">Marquez vince a Brno e si avvicina al leader</a>
+        </div>
+        <div class="story-card-summary">Marc Marquez ha vinto il Gran Premio di Cechia, superando Pecco Bagnaia in una gara intensa. Jorge Bezzecchi è stato squalificato per aver aggredito un marshall. Marquez si avvicina al primo posto con 40 punti di distanza dal leader.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/motori/motogp-marc-marquez-concede-bis-brno-e-si-avvicina-vetta-2682220.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/ultimora/-motogp-marquez-vince-a-brno-bagnaia-3-71e6f96e-93c7-4ab8-af64-caf87397aef6.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="sindaco di martignacco proibisce giochi con il pallone nei parchi"
+         data-summary="il comune di martignacco ha firmato un&#39;ordinanza che vieta il gioco del pallone nelle aree pubbliche attrezzate per bambini, salvo i bambini accompagnati da genitori. le sanzioni amministrative variano da 25 a 500 euro."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/112.html">Sindaco di Martignacco proibisce giochi con il pallone nei parchi</a>
+        </div>
+        <div class="story-card-summary">Il Comune di Martignacco ha firmato un&#39;ordinanza che vieta il gioco del pallone nelle aree pubbliche attrezzate per bambini, salvo i bambini accompagnati da genitori. Le sanzioni amministrative variano da 25 a 500 euro.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/2026/06/vietati-giochi-con-il-pallone-nei-parchi-attrezzati-per-bambini-lordinanza-di-un-sindaco-friulano-b5bb9be4-1c83-44c1-ac6c-90a960566d13.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/20/in-friuli-sindaco-firma-unordinanza-anti-pallone-nei-parchi-pubblici_1f586e92-df95-4166-b499-984133117316.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="tenta di strangolare due bambini: disposta custodia in carcere"
+         data-summary="il tribunale ha deciso di sostituire gli arresti domiciliari con la custodia cautelare in carcere per un 29enne nigeriano accusato di aver tentato di strangolare due bambini in un parco di brescia. il secondo bambino, di tre anni, è stato salvato da un passante pakistano."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/113.html">Tenta di strangolare due bambini: disposta custodia in carcere</a>
+        </div>
+        <div class="story-card-summary">Il Tribunale ha deciso di sostituire gli arresti domiciliari con la custodia cautelare in carcere per un 29enne nigeriano accusato di aver tentato di strangolare due bambini in un parco di Brescia. Il secondo bambino, di tre anni, è stato salvato da un passante pakistano.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/2026/06/tenta-di-strangolare-due-bambini-a-brescia-disposta-la-custodia-in-carcere-del-29enne-nigeriano-bdf1710e-e2a3-482f-ab00-e214ec02363a.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/tenta-di-strangolare-due-bambini-a-brescia-disposta-custodia-in-carcere_ed203439-4d15-4250-b27d-d26c85e3aced.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="fedriga difende salvini e critica chi promette soluzioni immediate"
+         data-summary="il governatore del friuli venezia giulia, massimiliano fedriga, ha sostenuto il segretario della lega, matteo salvini, negando la sostituzione dei vertici del partito. inoltre, ha invocato i elettori a non votare se credono che problemi come l&#39;immigrazione possano essere risolti in un giorno. vannacci, invece, ha rilanciato il conflitto interno con la premier giorgia meloni."
+         data-category="politica">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/116.html">Fedriga difende Salvini e critica chi promette soluzioni immediate</a>
+        </div>
+        <div class="story-card-summary">Il governatore del Friuli Venezia Giulia, Massimiliano Fedriga, ha sostenuto il segretario della Lega, Matteo Salvini, negando la sostituzione dei vertici del partito. Inoltre, ha invocato i elettori a non votare se credono che problemi come l&#39;immigrazione possano essere risolti in un giorno. Vannacci, invece, ha rilanciato il conflitto interno con la premier Giorgia Meloni.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/interni/fedriga-non-votate-lega-se-sperate-nel-messia-i-5s-nel-2018-2682162.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/salvini-non-si-pente-del-tycoon-e-rilancia-sul-partito" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="nuove carrozze panoramiche debuttano sulla ferrovia palazzolo sull&#39;oglio-paratico sarnico"
+         data-summary="la fondazione fs italiane ha lanciato le nuove carrozze panoramiche sul tratto ferroviario tra palazzolo sull&#39;oglio e paratico-sarnico, percorso ogni sabato fino al 29 agosto. il progetto, sostenuto dalla regione lombardia, utilizza vecchi carri merci trasformati in vetture panoramiche aperte. i biglietti costano 15 euro a/r."
+         data-category="economia">
+      <div class="story-card-body">
+        <div class="story-card-category">Economia</div>
+        <div class="story-card-headline">
+          <a href="story/117.html">Nuove carrozze panoramiche debuttano sulla ferrovia Palazzolo sull&#39;Oglio-Paratico Sarnico</a>
+        </div>
+        <div class="story-card-summary">La Fondazione FS Italiane ha lanciato le nuove carrozze panoramiche sul tratto ferroviario tra Palazzolo sull&#39;Oglio e Paratico-Sarnico, percorso ogni sabato fino al 29 agosto. Il progetto, sostenuto dalla Regione Lombardia, utilizza vecchi carri merci trasformati in vetture panoramiche aperte. I biglietti costano 15 euro A/R.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/attualit/fondazione-fs-parte-viaggio-su-nuove-carrozze-panoramiche-2682121.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/economia/news/2026-06-20/carrozze-panoramiche-fondazione-fs-37655286/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="incidente stradale mortale in versilia: ragazzo di 17 anni ucciso"
+         data-summary="versilia ha vissuto un incidente stradale notturno che ha causato la morte di gabriele martini, 17 anni, investito da un suv. il conducente, luigi giordano, 34 anni, si è costituito spontaneamente e risponde di omicidio stradale con l&#39;aggravante dell&#39;omissione di soccorso."
+         data-category="cronaca nera">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca Nera</div>
+        <div class="story-card-headline">
+          <a href="story/118.html">Incidente stradale mortale in Versilia: ragazzo di 17 anni ucciso</a>
+        </div>
+        <div class="story-card-summary">Versilia ha vissuto un incidente stradale notturno che ha causato la morte di Gabriele Martini, 17 anni, investito da un suv. Il conducente, Luigi Giordano, 34 anni, si è costituito spontaneamente e risponde di omicidio stradale con l&#39;aggravante dell&#39;omissione di soccorso.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/cronaca-nera/travolge-scooter-e-fugge-ucciso-ragazzo-17-anni-2682111.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-20/incidenti-stradali-viareggio-scooter-suv-37651631/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="papa leone xiv celebra visita a pavia con messaggio di pace e fraternità"
+         data-summary="il papa ha celebrato la sua visita a pavia, presso la tomba di sant&#39;agostino, con un messaggio che riprende concetti agostiniani come pace, amore, unità e fraternità. ha sottolineato l&#39;importanza della costruzione della pace individuale e comunitaria, esortando a superare il bullismo e le divisioni. la visita ha anche coinvolto la memoria di santa maria cabrini, patrona dei migranti."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/119.html">Papa Leone XIV celebra visita a Pavia con messaggio di pace e fraternità</a>
+        </div>
+        <div class="story-card-summary">Il Papa ha celebrato la sua visita a Pavia, presso la tomba di sant&#39;Agostino, con un messaggio che riprende concetti agostiniani come pace, amore, unità e fraternità. Ha sottolineato l&#39;importanza della costruzione della pace individuale e comunitaria, esortando a superare il bullismo e le divisioni. La visita ha anche coinvolto la memoria di Santa Maria Cabrini, patrona dei migranti.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ilgiornale.it/news/vaticano/parole-papa-leone-sono-vero-agostiniano-pace-amore-unit-2682063.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-20/papa-basta-bullismo-odio-37660339/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="dazio ue e tassa nazionale sui piccoli pacchi"
+         data-summary="dal 1 luglio entra in vigore il dazio europeo di 3 euro sui piccoli pacchi provenienti dai paesi extracomunitari, insieme alla tassa di 2 euro prevista dalla legge di bilancio. in italia potrebbe avvenire una doppia tassazione per spedizioni da cina e altri paesi extra ue, con un costo aggiuntivo di 5 euro per spedizione. confetra si oppone a questa misura, temendo un crollo dei traffici merci, mentre aice confcommercio sostiene che la tassa potrebbe colpire significativamente piattaforme come temu."
+         data-category="economia">
+      <div class="story-card-body">
+        <div class="story-card-category">Economia</div>
+        <div class="story-card-headline">
+          <a href="story/123.html">Dazio UE e tassa nazionale sui piccoli pacchi</a>
+        </div>
+        <div class="story-card-summary">Dal 1 luglio entra in vigore il dazio europeo di 3 euro sui piccoli pacchi provenienti dai paesi extracomunitari, insieme alla tassa di 2 euro prevista dalla legge di bilancio. In Italia potrebbe avvenire una doppia tassazione per spedizioni da Cina e altri paesi extra UE, con un costo aggiuntivo di 5 euro per spedizione. Confetra si oppone a questa misura, temendo un crollo dei traffici merci, mentre Aice Confcommercio sostiene che la tassa potrebbe colpire significativamente piattaforme come Temu.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/2026/06/da-luglio-il-dazio-europeo-sui-piccoli-pacchi-con-la-tassa-prevista-nella-legge-di-bilancio-9c726dbf-224b-4ae0-8d45-8529aed5d0b0.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/economia/news/2026-06-21/tassa-prodotti-cina-extra-ue-37661060/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="dipinto di picasso scoperto durante perquisizione antidroga in francia"
+         data-summary="la polizia francese ha scoperto un dipinto attribuito a pablo picasso durante una perquisizione antidroga in un&#39;abitazione della periferia di parigi. l&#39;opera, sequestrata insieme ad altre sostanze illecite e beni di lusso, è stata autenticata come un&#39;opera del pittore spagnolo. gli investigatori hanno arrestato quattro persone in relazione al caso."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/124.html">Dipinto di Picasso scoperto durante perquisizione antidroga in Francia</a>
+        </div>
+        <div class="story-card-summary">La polizia francese ha scoperto un dipinto attribuito a Pablo Picasso durante una perquisizione antidroga in un&#39;abitazione della periferia di Parigi. L&#39;opera, sequestrata insieme ad altre sostanze illecite e beni di lusso, è stata autenticata come un&#39;opera del pittore spagnolo. Gli investigatori hanno arrestato quattro persone in relazione al caso.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/2026/06/francia-opera-di-picasso-del-valore-di-diversi-milioni-di-euro-scoperta-durante-un-blitz-antidroga-2066e968-66bb-45f5-b965-966440a2a493.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/michelangelo-rodin-il-laboratorio-del-corpo-ideale" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="mona khalil, ambientalista libanese, uccisa in raid israeliano"
+         data-summary="mona khalil, un&#39;ambientalista libanese di 77 anni, è stata uccisa durante un raid israeliano a tiro. era nota per la sua opera salvaguardando le tartarughe marine e il suo territorio costiero. il raid ha causato gravi ferite anche alla sua assistente."
+         data-category="esteri">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/125.html">Mona Khalil, ambientalista libanese, uccisa in raid israeliano</a>
+        </div>
+        <div class="story-card-summary">Mona Khalil, un&#39;ambientalista libanese di 77 anni, è stata uccisa durante un raid israeliano a Tiro. Era nota per la sua opera salvaguardando le tartarughe marine e il suo territorio costiero. Il raid ha causato gravi ferite anche alla sua assistente.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://ilmanifesto.it/uccisa-a-tiro-lambientalista-mona-khalil-una-vita-per-un-pezzo-di-mare" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/libano-morta-in-un-raid-idf-mona-khalil-lambientalista-guardiana-delle-tartarughe-marine-933a2480-d361-4818-9f1b-749f7e728adc.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card"
+         data-headline="trentino: 15enne muore investita in bicicletta"
+         data-summary="in trentino una giovane ciclista di 15 anni è morta dopo essere stata investita da un&#39;auto a pressano, frazione di lavis. la vittima era adele c., atleta promessa del ciclismo giovanile. le forze dell&#39;ordine stanno ricostruendo l&#39;incidente."
+         data-category="cronaca">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/134.html">Trentino: 15enne muore investita in bicicletta</a>
+        </div>
+        <div class="story-card-summary">In Trentino una giovane ciclista di 15 anni è morta dopo essere stata investita da un&#39;auto a Pressano, frazione di Lavis. La vittima era Adele C., atleta promessa del ciclismo giovanile. Le forze dell&#39;ordine stanno ricostruendo l&#39;incidente.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.rainews.it/articoli/ultimora/trentino-15enne-muore-investita-in-bici-765ace00-03aa-48d2-8881-4bb2e5590634.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/cronaca/news/2026-06-20/ragazzina-travolta-bici-morta-37656181/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>2</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <p class="no-results" id="no-results" style="display:none;padding:2rem 0;font-family:var(--font-sans);color:var(--gray-3);">
+    Nessuna notizia trovata per questa ricerca o questi filtri.
+  </p>
+
+</div>
+
+<script>
+(function () {
+  const input    = document.getElementById('story-search');
+  const list     = document.getElementById('story-list');
+  const count    = document.getElementById('visible-count');
+  const noRes    = document.getElementById('no-results');
+  const tagWrap  = document.getElementById('tag-filter');
+  const tagBtns  = Array.from(tagWrap.querySelectorAll('.tag-toggle'));
+  const tagClear = document.getElementById('tag-clear');
+  const cards    = Array.from(list.querySelectorAll('.story-card'));
+  const total    = cards.length;
+
+  const activeTags = new Set();
+
+  function applyFilters() {
+    const q = input.value.trim().toLowerCase();
+    let visible = 0;
+
+    cards.forEach(function (card) {
+      const matchesSearch = !q
+        || card.dataset.headline.includes(q)
+        || card.dataset.summary.includes(q);
+      const matchesTags = activeTags.size === 0
+        || activeTags.has(card.dataset.category);
+      const match = matchesSearch && matchesTags;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+
+    const filtered = q || activeTags.size > 0;
+    count.textContent = filtered ? visible : total;
+    noRes.style.display = (visible === 0 && filtered) ? '' : 'none';
+    tagClear.style.display = activeTags.size > 0 ? '' : 'none';
+  }
+
+  tagBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const tag = btn.dataset.tag;
+      if (activeTags.has(tag)) {
+        activeTags.delete(tag);
+        btn.classList.remove('active');
+      } else {
+        activeTags.add(tag);
+        btn.classList.add('active');
+      }
+      applyFilters();
+    });
+  });
+
+  tagClear.addEventListener('click', function () {
+    activeTags.clear();
+    tagBtns.forEach(function (btn) { btn.classList.remove('active'); });
+    applyFilters();
+  });
+
+  input.addEventListener('input', applyFilters);
+})();
+</script>
+
+
+
+<script>
+(function () {
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  document.querySelectorAll('.source-row[data-shuffle="true"]').forEach(function (row) {
+    const chips = Array.from(row.children);
+    shuffle(chips).forEach(function (chip) { row.appendChild(chip); });
+  });
+})();
+
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 23 giugno 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

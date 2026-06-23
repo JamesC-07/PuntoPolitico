@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PuntoPolitico - Notizie italiane</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">23 giugno 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">
+      Notizie italiane<br>
+      senza filtri
+    </div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">
+      Aggiornato ogni giorno<br>
+      da fonti pubbliche e verificate.
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="temi.html" >Temi politici</a>
+      <a href="partiti.html" >Partiti</a>
+      <a href="notizie.html" >Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+
+
+
+<div class="wrap">
+
+  <div class="section-label red">Notizie principali</div>
+
+  <div class="featured-grid">
+    
+    <div class="featured-card featured-main">
+      <div class="story-card-category">Politica</div>
+      <div class="featured-headline">
+        <a href="story/20.html">Abelardo de la Espriella vince le presidenziali in Colombia</a>
+      </div>
+      
+      <div class="story-card-summary">Abelardo de la Espriella, detto &#34;El Tigre&#34;, candidato di destra, vince di misura le presidenziali in Colombia con circa il 49,7% contro il 48,7% del candidato di sinistra Iván Cepeda. La sinistra contesta il risultato e chiede il riconteggio, denunciando presunti brogli e irregolarità in 33mila seggi.</div>
+      
+      <div class="featured-meta">
+        <span class="outlet-count-inline">
+          <strong>7</strong> fonti
+        </span>
+      </div>
+    </div>
+    
+    <div class="featured-card featured-side">
+      <div class="story-card-category">Politica</div>
+      <div class="featured-headline">
+        <a href="story/3.html">Starmer verso le dimissioni</a>
+      </div>
+      
+      <div class="featured-meta">
+        <span class="outlet-count-inline">
+          <strong>6</strong> fonti
+        </span>
+      </div>
+    </div>
+    
+    <div class="featured-card featured-side">
+      <div class="story-card-category">Cronaca</div>
+      <div class="featured-headline">
+        <a href="story/6.html">Indagini sulla scomparsa di due sorelle in Abruzzo</a>
+      </div>
+      
+      <div class="featured-meta">
+        <span class="outlet-count-inline">
+          <strong>6</strong> fonti
+        </span>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="cat-nav">
+    <span class="cat-nav-label">Vai a</span>
+    
+      <a href="category/politica.html">Politica</a>
+    
+      <a href="category/cronaca.html">Cronaca</a>
+    
+      <a href="category/cultura.html">Cultura</a>
+    
+      <a href="category/economia.html">Economia</a>
+    
+      <a href="category/esteri.html">Esteri</a>
+    
+      <a href="category/cronaca-nera.html">Cronaca Nera</a>
+    
+      <a href="category/altro.html">Altro</a>
+    
+  </div>
+
+  
+  <div class="section-label">Altre notizie</div>
+
+  <div class="story-list">
+    
+    <div class="story-card">
+      <div class="story-card-body">
+        <div class="story-card-category">Politica</div>
+        <div class="story-card-headline">
+          <a href="story/9.html">Trump attacca Meloni: &#39;In calo di popolarità&#39;. La premier ribatte</a>
+        </div>
+        <div class="story-card-summary">Il presidente Usa accusa la premier di averlo cercato per una foto al G7 e di voler tornare sua amica per risalire nei sondaggi, mentre Meloni replica duramente definendo tutto falso e invitando Trump a preoccuparsi della sua popolarità. La crisi si allarga con l&#39;annullamento della missione di Tajani a Washington e la solidarietà di Mattarella alla premier e con una nuova replica da parte di Trump.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/europa/notizie/rubriche/altrenews/2026/06/19/ansa-trump-shock-su-meloni-tra-italia-e-usa-ora-e-rottura-totale_e4cc6bef-008c-4309-be04-7aa6e4374069.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.linkiesta.it/2026/06/nuovo-attacco-donald-trump-giorgia-meloni/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Linkiesta">
+    
+      <img class="logo-light" src="assets/logos/linkiesta.png" alt="Linkiesta">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/trump-insiste-giorgia-meloni-voleva-tornare-amica-mia-perche-in-italia-e-in-calo-no-grazie--cbdb64fe-edbe-4c16-a458-bb2d9a06bd68.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/politica-estera/trump-insiste-contro-meloni-e-l-italia-non-ci-sono-2682280.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-20/trump-meloni-amica-nato-37656166/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://ilmanifesto.it/trump-meloni-ormai-e-rissa-cerca-voti-lei-pensa-a-te" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Manifesto">
+    
+      <img class="logo-light" src="assets/logos/manifesto.png" alt="Il Manifesto">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.linkiesta.it/2026/06/mari-ciabatti-meloni-trump/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Linkiesta">
+      
+        <img class="logo-light" src="assets/logos/linkiesta.png" alt="Linkiesta">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/ultimora/trump-meloni-vuole-tornare-amica-no-3641eb66-4b56-401a-893b-e5f43aa22140.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/articoli/ultimora/meloni-a-trump-pensa-a-tua-popolarita--ad504039-dfbe-4121-a26d-d16274a282cb.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>6</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card">
+      <div class="story-card-body">
+        <div class="story-card-category">Esteri</div>
+        <div class="story-card-headline">
+          <a href="story/4.html">Colloqui Usa-Iran in Svizzera: primo round con divergenze</a>
+        </div>
+        <div class="story-card-summary">Negoziazioni tra Stati Uniti e Iran a Bürgenstock, con Pakistan e Qatar come mediatori. Si sono costituiti gruppi tecnici per discutere degli accordi riguardanti la guerra e le relative crisi economiche.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/topnews/2026/06/22/teheran-in-svizzera-liran-ha-avuto-brevi-colloqui-con-gli-usa-sul_8148e395-19ca-40a8-b9b1-85446bc5158e.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-22/colloqui-iran-usa-accordo-60-giorni-37673103/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+  <a href="https://www.ilgiornale.it/news/guerra/negoziati-usa-iran-concluso-primo-round-colloqui-concordata-2682426.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Il Giornale">
+    
+      <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+      
+        <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+      
+    
+  </a>
+  
+  <a href="https://www.adnkronos.com/internazionale/esteri/usa-iran-negoziati-svizzera-news-oggi-22-giugno_6sMfZyY8RRZvtWXLwh7Muj" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Adnkronos">
+    
+      <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/video/2026/06/primo-round-negoziale-usa-iran-ci-sono-gia-le-prime-divergenze-5878b5ab-dda7-4a98-9400-64cffaafe077.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.ansa.it/sito/notizie/mondo/2026/06/22/negoziati-iran-usa-ripresa-immediata-delle-discussioni-tecniche.-teheran-brevi_3f548fa6-7a33-4da3-9874-13453cd0e01a.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/sito/notizie/topnews/2026/06/22/colloqui-iran-usa-la-svizzera-annuncia-ripresa-immediata-discussioni-tecniche_14eef165-67d6-41e0-be29-ab5f5956e2a4.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.ansa.it/europa/notizie/rubriche/altrenews/2026/06/20/berna-continuiamo-a-lavorare-per-facilitare-i-colloqui-usa-iran_04158a48-b45e-480a-9a5b-7ed7a9952779.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="ANSA">
+      
+        <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+        
+      
+    </a>
+    
+    <a href="https://www.agi.it/estero/news/2026-06-21/colloqui-usa-iran-svizzera-37662928/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="AGI">
+      
+        <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+        
+          <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+        
+      
+    </a>
+    
+    <a href="https://www.agi.it/estero/news/2026-06-21/trump-minaccia-iran-colloqui-37667621/" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="AGI">
+      
+        <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+        
+          <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+        
+      
+    </a>
+    
+    <a href="https://www.ilgiornale.it/news/guerra/linea-diretta-sullo-stretto-hormuz-e-piano-fermare-guerra-2682403.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Il Giornale">
+      
+        <img class="logo-light" src="assets/logos/ilgiornale.png" alt="Il Giornale">
+        
+          <img class="logo-dark" src="assets/logos/giornalescuro.png" alt="Il Giornale">
+        
+      
+    </a>
+    
+    <a href="https://www.adnkronos.com/internazionale/esteri/usa-iran-negoziati-trump-minacce_6u8MbQjyAy8wfdUWgO6Gfh" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Adnkronos">
+      
+        <img class="logo-light" src="assets/logos/adnkronos.png" alt="Adnkronos">
+        
+      
+    </a>
+    
+    <a href="https://www.rainews.it/video/2026/06/vertice-in-svizzera-usa-iran-pace-in-libano-e-hormuz-restano-i-temi-chiave--19f4fcb4-b5f2-4709-b0d8-c9cce85dca00.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>5</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card">
+      <div class="story-card-body">
+        <div class="story-card-category">Cronaca</div>
+        <div class="story-card-headline">
+          <a href="story/12.html">Almasri condannato a 7 anni e 4 mesi in Libia</a>
+        </div>
+        <div class="story-card-summary">Il Tribunale di Tripoli ha condannato Osama Najeem Almasri a 7 anni e 4 mesi per aver violato i diritti dei detenuti. L&#39;ex comandante del carcere di Mitiga, ricercato dalla Corte penale internazionale, è stato rimpatriato in Libia dopo essere stato arrestato in Italia. La condanna non chiude il procedimento davanti alla Corte penale internazionale.</div>
+        
+
+
+
+<div class="sources-label">Leggi su</div>
+
+<div class="source-row" data-shuffle="true">
+  
+  <a href="https://www.ansa.it/sito/notizie/cronaca/2026/06/21/il-tribunale-di-tripoli-condanna-almasri-a-7-anni-e-4-mesi_cd54aefd-7b36-4802-bd94-a5f368fa2f31.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="ANSA">
+    
+      <img class="logo-light" src="assets/logos/ansa.png" alt="ANSA">
+      
+    
+  </a>
+  
+  <a href="https://www.linkiesta.it/2026/06/almasri-condannato-tribunale-tripoli/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Linkiesta">
+    
+      <img class="logo-light" src="assets/logos/linkiesta.png" alt="Linkiesta">
+      
+    
+  </a>
+  
+  <a href="https://www.rainews.it/articoli/2026/06/caso-almasri-condannato-a-7-anni-a-tripoli-lex-comandante-torturatore-di-mitiga-ad38f409-19d4-484d-8360-c1410be46d40.html" target="_blank" rel="noopener"
+     class="source-chip"
+     title="Rai News">
+    
+      <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+      
+    
+  </a>
+  
+  <a href="https://www.agi.it/estero/news/2026-06-21/libia-almasri-condannato-carcere-37670359/" target="_blank" rel="noopener"
+     class="source-chip"
+     title="AGI">
+    
+      <img class="logo-light" src="assets/logos/agi.png" alt="AGI">
+      
+        <img class="logo-dark" src="assets/logos/agiscuro.png" alt="AGI">
+      
+    
+  </a>
+  
+</div>
+
+<div class="secondary-sources">
+  <span class="secondary-sources-label">Altri articoli sull'argomento:</span>
+  <div class="source-row">
+    
+    <a href="https://www.rainews.it/articoli/ultimora/-libia-almasri-condannato-a-7-anni--9073a066-5e7b-430c-ad10-5cacf51dcdd1.html" target="_blank" rel="noopener"
+       class="source-chip secondary"
+       title="Rai News">
+      
+        <img class="logo-light" src="assets/logos/rainews.png" alt="Rai News">
+        
+      
+    </a>
+    
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-card-side">
+        <div class="outlet-count">
+          <strong>4</strong>
+          fonti
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+
+  
+
+  
+  <div class="more-link-row">
+    <a class="more-link-cta" href="notizie.html">
+      <span class="more-link-cta-text">Vedi tutte le notizie</span>
+      <span class="more-link-cta-count">65</span>
+    </a>
+  </div>
+  
+
+  <div class="sections-row">
+
+    <div class="section-block">
+      <div class="section-block-title">Temi politici</div>
+      <div class="topic-cards">
+        <div class="topic-card">
+          <a class="topic-card-name" href="nucleare.html">Nucleare</a>
+        </div>
+        <div class="topic-card">
+          <a class="topic-card-name" href="immigrazione.html">Immigrazione</a>
+        </div>
+        <div class="topic-card">
+          <a class="topic-card-name" href="magistratura.html">Riforma della giustizia</a>
+        </div>
+        <div class="topic-card">
+          <a class="topic-card-name" href="sanita.html">Sanità</a>
+        </div>
+        <div class="topic-card">
+          <a class="topic-card-name" href="scuola.html">Scuola</a>
+        </div>
+        <div class="topic-card">
+          <a class="topic-card-name" href="tasse.html">Tasse e fisco</a>
+        </div>
+      </div>
+      <div class="more-link-row topic-more-link-row">
+        <a class="more-link-cta" href="temi.html">
+          <span class="more-link-cta-text">Vedi tutti i temi politici</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-block-title">Partiti</div>
+      <div class="topic-cards">
+        <div class="topic-card">
+          <span class="topic-card-name disabled">Fratelli d'Italia</span>
+          <span class="soon-tag">In arrivo</span>
+        </div>
+        <div class="topic-card">
+          <span class="topic-card-name disabled">Lega</span>
+          <span class="soon-tag">In arrivo</span>
+        </div>
+        <div class="topic-card">
+          <span class="topic-card-name disabled">Forza Italia</span>
+          <span class="soon-tag">In arrivo</span>
+        </div>
+        <div class="topic-card">
+          <span class="topic-card-name disabled">Partito Democratico</span>
+          <span class="soon-tag">In arrivo</span>
+        </div>
+        <div class="topic-card">
+          <span class="topic-card-name disabled">Movimento 5 Stelle</span>
+          <span class="soon-tag">In arrivo</span>
+        </div>
+        <div class="topic-card">
+          <span class="topic-card-name disabled">Alleanza Verdi e Sinistra</span>
+          <span class="soon-tag">In arrivo</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+(function () {
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  document.querySelectorAll('.source-row[data-shuffle="true"]').forEach(function (row) {
+    const chips = Array.from(row.children);
+    shuffle(chips).forEach(function (chip) { row.appendChild(chip); });
+  });
+})();
+
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 23 giugno 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Immigrazione - PuntoPolitico</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">22 GIUGNO 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">Notizie italiane<br>senza filtri</div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">Aggiornato ogni giorno<br>da fonti pubbliche e verificate.</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html">Home</a>
+      <a href="temi.html" class="active">Temi politici</a>
+      <a href="partiti.html">Partiti</a>
+      <a href="notizie.html">Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <a class="back-link" href="temi.html">Torna ai temi politici</a>
+
+  <div class="static-page">
+    <div class="section-label red">immigrazione</div>
+
+    <div class="info-block">
+      <h2>Introduzione</h2>
+      <p class="intro" id="text1">
+        L'Italia è il principale paese di primo ingresso in Europa per i flussi migratori via mare dal Mediterraneo centrale, ossia la rotta migratoria più letale al mondo. Nel 2023 sono sbarcate sulle coste italiane circa 157.000 persone, il dato più alto dal 2016.<sup><a href="#ref1">[1]</a></sup> La gestione dell'immigrazione è competenza principalmente dello Stato (Ministero dell'Interno), con implicazioni su politiche di accoglienza, lavoro e integrazione che coinvolgono Regioni e Comuni.
+      </p>
+      <p id="text2" style="margin-top:14px;">
+        L'Italia ha un saldo migratorio positivo da decenni. La popolazione straniera residente è di circa 5 milioni di persone, pari a oltre l'8% della popolazione totale.<sup><a href="#ref2">[2]</a></sup> I principali paesi di provenienza dei residenti stranieri sono Romania, Albania, Marocco, Cina e Ucraina.
+      </p>
+    </div>
+
+    <div class="info-block">
+      <h2>I dati</h2>
+      <p id="text3">
+        Nel 2023 le domande di asilo presentate in Italia sono state circa 130.000, con un tasso di riconoscimento della protezione internazionale (in tutte le sue forme) di circa il 50%, con variazioni significative per nazionalità.<sup><a href="#ref3">[3]</a></sup> I lavoratori stranieri occupati in Italia sono circa 2,4 milioni, pari a circa il 10% degli occupati totali. I morti nel Mediterraneo nel 2023 sono stati oltre 2.500 (dato OIM).<sup><a href="#ref4">[4]</a></sup>
+      </p>
+    </div>
+
+    <div class="info-block">
+      <h2>Argomenti a confronto</h2>
+      <div class="pros-cons-grid">
+        <div class="pros-col">
+          <h4>A FAVORE DI POLITICHE RESTRITTIVE</h4>
+          <ul>
+            <li id="text5">Il sistema di accoglienza è sotto pressione: i centri (CAS, SAI) sono frequentemente sovraffollati e i costi di gestione sono elevati, stimati intorno a 5 miliardi di euro all'anno (MEF).</li>
+            <li>La gestione irregolare dei flussi favorisce il traffico di esseri umani e le organizzazioni criminali.</li>
+            <li>L'integrazione è piu difficile senza canali legali ordinati: un'immigrazione caotica produce marginalizzazione.</li>
+          </ul>
+        </div>
+        <div class="cons-col">
+          <h4>A FAVORE DI POLITICHE APERTE</h4>
+          <ul>
+            <li id="text6">L'Italia ha un deficit demografico strutturale: il tasso di natalità è sceso a 1,20 figli per donna nel 2023, minimo storico. Senza immigrazione, il rapporto lavoratori/pensionati peggiora rapidamente.<sup><a href="#ref6">[6]</a></sup></li>
+            <li id="text7">Le stime del fabbisogno di lavoratori immigrati regolari sono nell'ordine di 300.000-500.000 l'anno per sostenere il sistema produttivo e previdenziale (Fondazione Leone Moressa, OCSE).<sup><a href="#ref7">[7]</a></sup></li>
+            <li id="text8">Il saldo fiscale dell'immigrazione regolare è positivo: i lavoratori stranieri versano circa 9 miliardi di euro l'anno in contributi e IRPEF e usufruiscono in misura inferiore alla media di alcuni servizi (INPS, 2022).<sup><a href="#ref5">[5]</a></sup></li>
+            <li>I morti nel Mediterraneo rappresentano una crisi umanitaria con implicazioni legali e morali difficilmente ignorabili.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h2>Storia e contesto legislativo</h2>
+      <p class="intro" style="font-size:17px;border-bottom:1px solid var(--gray-5);padding-bottom:18px;margin-bottom:0;">
+        La legislazione italiana sull'immigrazione è stata modificata da ogni governo degli ultimi trent'anni, spesso per rispondere a emergenze contingenti piuttosto che con una visione di lungo periodo.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">1998</div>
+          <div class="timeline-content">
+            <strong>Legge Turco-Napolitano (L. 40/1998)</strong><br>
+            Prima legge organica sull'immigrazione in Italia. Introduce i Centri di Permanenza Temporanea (CPT), i permessi di soggiorno per lavoro con quote annuali (decreto flussi) e i corridoi umanitari.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2002</div>
+          <div class="timeline-content">
+            <strong>Legge Bossi-Fini (L. 189/2002)</strong><br>
+            Irrigidisce le condizioni: il permesso di soggiorno viene legato al contratto di lavoro e si introduce il reato di clandestinità (poi dichiarato parzialmente incostituzionale nella parte sanzionatoria). Reintroduce il respingimento in mare.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2009</div>
+          <div class="timeline-content">
+            <strong>Pacchetto sicurezza (governo Berlusconi)</strong><br>
+            Introduce il reato di ingresso e soggiorno illegale e inasprisce le pene per i reati commessi da stranieri irregolari.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2018</div>
+          <div class="timeline-content">
+            <strong>Decreti sicurezza Salvini (D.L. 113/2018 e 53/2019)</strong><br>
+            Abolizione della protezione umanitaria (poi reintrodotta parzialmente come "protezione speciale"), ampliamento dei CPR, revoca della cittadinanza per reati di terrorismo. In parte modificati dal governo Conte II nel 2020.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2023</div>
+          <div class="timeline-content">
+            <strong>Decreto Cutro (D.L. 20/2023)</strong><br>
+            Emanato dopo la strage di Cutro (26 febbraio 2023, 94 morti). Limita ulteriormente la protezione speciale, introduce nuove forme di trattenimento, proroga i tempi nei CPR. Alcune disposizioni sono state oggetto di sentenze in contrasto con le norme europee.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2023-2024</div>
+          <div class="timeline-content">
+            <strong>Accordo Italia-Albania</strong><br>
+            Prevede centri di detenzione in Albania per i migranti intercettati in acque internazionali dalla marina italiana. Contestato davanti alla Corte di Giustizia UE e ai tribunali italiani; la Corte d'Appello di Roma ha sollevato questione pregiudiziale alla CGUE nel 2024.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block" id="fonti">
+      <h2>Fonti e approfondimenti</h2>
+      <p style="font-family:var(--font-sans);font-size:15px;color:var(--gray-2);margin-bottom:18px;">
+        Di seguito le principali fonti utilizzate per la redazione di questa pagina.
+      </p>
+
+      <div class="fonte-item" id="ref1">
+        <span class="fonte-num">[1]</span>
+        <span class="fonte-text">
+          <strong>Ministero dell'Interno - Cruscotto statistico giornaliero (2023)</strong><br>
+          Dati sugli sbarchi sulle coste italiane: 157.652 arrivi nel 2023, contro 105.131 nel 2022 e 67.477 nel 2021. Principali nazionalita degli sbarcati: Guinea, Costa d'Avorio, Tunisia, Bangladesh, Siria.<br>
+          <a href="https://www.interno.gov.it/it/stampa-e-comunicazione/dati-e-statistiche/sbarchi-e-accoglienza-dei-migranti-tutti-i-dati" target="_blank">interno.gov.it</a>
+          <a href="#text1" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref2">
+        <span class="fonte-num">[2]</span>
+        <span class="fonte-text">
+          <strong>Istat - Presenza di cittadini stranieri</strong><br>
+          Popolazione straniera residente in Italia.<br>
+          <a href="https://www.istat.it/it/files/2023/03/Statistica-Report_STRANIERI-RESIDENTI.pdf" target="_blank">istat.it</a>
+          <a href="#text2" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref3">
+        <span class="fonte-num">[3]</span>
+        <span class="fonte-text">
+          <strong>Ministero dell'Interno</strong><br>
+          Domande di protezione internazionale presentate nel 2023: circa 130.000. Tasso di riconoscimento complessivo (rifugiato + protezione sussidiaria + protezione speciale): circa il 50%, con forte variazione per paese di origine.<br>
+          <a href="https://www.interno.gov.it/it/temi/immigrazione-e-asilo/protezione-internazionale" target="_blank">interno.gov.it</a>
+          <a href="#text3" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref4">
+        <span class="fonte-num">[4]</span>
+        <span class="fonte-text">
+          <strong>OIM - Missing Migrants Project (2023)</strong><br>
+          Morti e dispersi nel Mediterraneo nel 2023: oltre 2.500 persone. Il Mediterraneo centrale rimane la rotta migratoria piu letale al mondo.<br>
+          <a href="https://missingmigrants.iom.int/region/mediterranean" target="_blank">missingmigrants.iom.int</a>
+          <a href="#text3" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+
+      <div class="fonte-item" id="ref5">
+        <span class="fonte-num">[5]</span>
+        <span class="fonte-text">
+          <strong>INPS - XV Rapporto annuale (2024)</strong><br>
+          Dati INPS sui lavoratori stranieri.<br>
+          <a href="https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.12.osservatorio-sugli-stranieri-i-dati-del-2024.html" target="_blank">inps.it</a>
+          <a href="#text8" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+      <div class="fonte-item" id="ref6">
+        <span class="fonte-num">[6]</span>
+        <span class="fonte-text">
+          <strong>Istat - Indicatori demografici 2023</strong><br>
+          Tasso di fecondita totale in Italia nel 2023: 1,20 figli per donna, minimo storico dall'Unita d'Italia. Il tasso di sostituzione generazionale richiede un valore di almeno 2,1.<br>
+          <a href="https://www.istat.it/comunicato-stampa/indicatori-demografici-anno-2023/" target="_blank">istat.it</a>
+          <a href="#text6" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref7">
+        <span class="fonte-num">[7]</span>
+        <span class="fonte-text">
+          <strong>Fondazione Leone Moressa</strong><br>
+          Rapporto annuale sull'economia dell'immigrazione (2024).<br>
+          <a href="https://www.fondazioneleonemoressa.org/2024/10/15/presentazione-rapporto-2024-2/" target="_blank">fondazioneleonemoressa.org</a>
+          <a href="#text7" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+    </div>
+    <div class="more-link-row temi-back-row">
+      <a class="more-link-cta" href="temi.html">
+        <span class="more-link-cta-text">torna ai temi politici</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 22 GIUGNO 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#ref"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      var rect = target.getBoundingClientRect();
+      var targetY = rect.top + window.pageYOffset - 60;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>

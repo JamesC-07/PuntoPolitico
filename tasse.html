@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tasse e fisco - PuntoPolitico</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">22 GIUGNO 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">Notizie italiane<br>senza filtri</div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">Aggiornato ogni giorno<br>da fonti pubbliche e verificate.</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html">Home</a>
+      <a href="temi.html" class="active">Temi politici</a>
+      <a href="partiti.html">Partiti</a>
+      <a href="notizie.html">Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <a class="back-link" href="temi.html">Torna ai temi politici</a>
+
+  <div class="static-page">
+    <div class="section-label red">tasse e fisco</div>
+
+    <div class="info-block">
+      <h2>Introduzione</h2>
+      <p class="intro" id="text1">
+        Il sistema fiscale italiano si basa su imposte dirette (IRPEF sul reddito delle persone fisiche, IRES sulle società), indirette (IVA, accise) e locali (IMU, TARI, addizionali regionali e comunali). La pressione fiscale complessiva è tra le piu alte d'Europa: circa il 42.5% del PIL nel 2023.<sup><a href="#ref1">[1]</a></sup>
+      </p>
+      <p id="text2" style="margin-top:14px;">
+        Il dibattito fiscale italiano ruota attorno a tre grandi nodi: l'evasione fiscale (tra le più alte d'Europa), la progressività dell'imposta sul reddito, e le proposte di flat tax o di rimodulazione delle aliquote. Dal 2024, le aliquote IRPEF sono state ridotte da quattro a tre scaglioni con la delega fiscale del governo Meloni.<sup><a href="#ref2">[2]</a></sup>
+      </p>
+    </div>
+
+    <div class="info-block">
+      <h2>Struttura attuale dell'IRPEF</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-family:var(--font-sans);font-size:14px;margin-top:8px;">
+          <thead>
+            <tr style="background:var(--gray-5);">
+              <th style="text-align:left;padding:10px 12px;border-bottom:2px solid var(--gray-4);">Scaglione</th>
+              <th style="text-align:center;padding:10px 12px;border-bottom:2px solid var(--gray-4);">Aliquota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--gray-5);">
+              <td style="padding:9px 12px;">Fino a 28.000 euro</td>
+              <td style="text-align:center;padding:9px 12px;">23%</td>
+            </tr>
+            <tr style="background:var(--gray-5);border-bottom:1px solid var(--gray-5);">
+              <td style="padding:9px 12px;">Da 28.000 a 50.000 euro</td>
+              <td style="text-align:center;padding:9px 12px;">35%</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 12px;">Oltre 50.000 euro</td>
+              <td style="text-align:center;padding:9px 12px;">43%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-family:var(--font-sans);font-size:13px;color:var(--gray-3);margin-top:8px;">La riforma ha accorpato i primi due scaglioni (23% e 25%) in un unico scaglione al 23%. Fonte: MEF, D.Lgs. 216/2023.<sup><a href="#ref2">[2]</a></sup></p>
+    </div>
+
+    <div class="info-block">
+      <h2>Evasione fiscale</h2>
+      <p id="text3">
+        Il tax gap (differenza tra gettito teorico e reale) è stimato dall'Agenzia delle Entrate in circa 83 miliardi di euro all'anno (dato 2021, ultimo disponibile).<sup><a href="#ref3">[3]</a></sup> L'evasione IVA è tra le piu alte d'Europa: circa 14.6 miliardi all'anno secondo il VAT Gap della Commissione Europea (2023).<sup><a href="#ref4">[4]</a></sup> Il sommerso economico è stimato tra il 9% e il 12% del PIL dall'Istat.<sup><a href="#ref5">[5]</a></sup> I settori più colpiti sono edilizia, commercio al dettaglio, servizi alla persona e agricoltura.
+      </p>
+    </div>
+
+    <div class="info-block">
+      <h2>Argomenti a confronto</h2>
+      <div class="pros-cons-grid">
+        <div class="pros-col">
+          <h4>A FAVORE DELLA FLAT TAX</h4>
+          <ul>
+            <li>Semplificazione del sistema, riduzione degli adempimenti per contribuenti e imprese.</li>
+            <li>Un'aliquota bassa può ridurre la convenienza dell'evasione, incentivando la compliance fiscale.</li>
+            <li id="text6">E già applicata parzialmente nel regime forfettario per autonomi fino a 85.000 euro di ricavi con aliquota al 15% (ampliato nel 2023).<sup><a href="#ref2">[2]</a></sup></li>
+            <li>Stimola l'offerta di lavoro e gli investimenti, secondo gli argomenti cosiddetti supply-side.</li>
+          </ul>
+        </div>
+        <div class="cons-col">
+          <h4>CONTRO LA FLAT TAX</h4>
+          <ul>
+            <li id="text7">Viola il principio di progressivita sancito dall'art. 53 della Costituzione ("il sistema tributario è informato a criteri di progressività").<sup><a href="#ref6">[6]</a></sup></li>
+            <li id="text8">Le simulazioni mostrano che avvantaggerebbe i redditi medio-alti e comporterebbe perdite tra 50 e 80 miliardi all'anno per una flat tax universale al 23%.<sup><a href="#ref7">[7]</a></sup></li>
+            <li>Nei paesi dell'Est Europa che l'hanno adottata (Estonia, Slovacchia, poi in parte abbandonata), gli effetti sulla crescita sono stati modesti e controversi.</li>
+            <li>Aumenta le disuguaglianze.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pros-cons-grid" style="margin-top:18px;">
+        <div class="pros-col">
+          <h4>PER UNA MAGGIORE TASSAZIONE DEI RICCHI</h4>
+          <ul>
+            <li id="text9">Le disuguaglianze patrimoniali sono marcate: il 10% più ricco della popolazione detiene circa il 50% della ricchezza netta (Banca d'Italia, 2023).<sup><a href="#ref8">[8]</a></sup></li>
+            <li id="text10">L'imposta di successione italiana è tra le più basse d'Europa: aliquota massima all'8%, con franchigia di un milione di euro per erede in linea diretta.<sup><a href="#ref9">[9]</a></sup></li>
+            <li>Patrimoniali e tasse sulle successioni sono storicamente basse in Italia rispetto agli altri paesi OCSE.</li>
+          </ul>
+        </div>
+        <div class="cons-col">
+          <h4>CONTRO MAGGIORE TASSAZIONE DEI RICCHI</h4>
+          <ul>
+            <li id="text11">Con una pressione fiscale già al 42,5% del PIL, un aumento potrebbe disincentivare l'attivita economica e favorire la fuga di capitali.<sup><a href="#ref1">[1]</a></sup></li>
+            <li>Il problema principale è l'evasione, non le aliquote: aumentarle su chi già paga non risolve il sommerso.</li>
+            <li>Le basi imponibili dei redditi alti (capital gain, dividendi internazionali) sono spesso mobili e difficilmente tassabili senza coordinamento europeo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h2>Storia e contesto legislativo</h2>
+      <p class="intro" style="font-size:17px;border-bottom:1px solid var(--gray-5);padding-bottom:18px;margin-bottom:0;">
+        Il sistema fiscale italiano moderno nasce nel 1973 e ha attraversato decenni di riforme parziali, spesso incompiute o rimodulate dai governi successivi.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">1973</div>
+          <div class="timeline-content">
+            <strong>Riforma Visentini</strong><br>
+            Istituzione dell'IRPEF moderna, con sistema progressivo per scaglioni. La prima riforma fiscale organica dell'Italia repubblicana.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">1998</div>
+          <div class="timeline-content">
+            <strong>Riforma Visco</strong><br>
+            Introduzione dell'IRAP (imposta regionale sulle attivita produttive). Oggetto di contestazioni per decenni, è stata parzialmente abolita per i lavoratori autonomi nel 2022.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2003</div>
+          <div class="timeline-content">
+            <strong>Riforma Tremonti</strong><br>
+            Riduzione da cinque a quattro scaglioni IRPEF. La riforma non viene completata integralmente dai governi successivi.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2015</div>
+          <div class="timeline-content">
+            <strong>Abolizione IMU prima casa</strong><br>
+            Il governo Renzi abolisce l'IMU sulla prima casa. Gli effetti redistributivi della misura restano oggetto di dibattito.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2019</div>
+          <div class="timeline-content">
+            <strong>Regime forfettario ampliato</strong><br>
+            La soglia per il regime al 15% sale a 65.000 euro (poi 85.000 nel 2023). La misura è criticata per la disparita di trattamento tra lavoratori dipendenti e autonomi.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2023-2024</div>
+          <div class="timeline-content">
+            <strong>Delega fiscale</strong><br>
+            Riordino delle aliquote IRPEF (da 4 a 3 scaglioni), estensione della flat tax incrementale al 15%, revisione dello statuto del contribuente.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block" id="fonti">
+      <h2>Fonti e approfondimenti</h2>
+      <p style="font-family:var(--font-sans);font-size:15px;color:var(--gray-2);margin-bottom:18px;">
+        Di seguito le principali fonti utilizzate per la redazione di questa pagina.
+      </p>
+
+      <div class="fonte-item" id="ref1">
+        <span class="fonte-num">[1]</span>
+        <span class="fonte-text">
+          <strong>Eurostat - Taxation Trends in the European Union (2024)</strong><br>
+          Statistiche comparate sulla pressione fiscale nei paesi UE e OCSE.<br>
+          <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Tax_revenue_statistics" target="_blank">ec.europa.eu/eurostat</a>
+          <a href="#text1" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref2">
+        <span class="fonte-num">[2]</span>
+        <span class="fonte-text">
+          <strong>MEF - D.Lgs. 216/2023 (prima attuazione delega fiscale)</strong><br>
+          Decreto legislativo che riduce gli scaglioni IRPEF da quattro a tre e introduce la flat tax incrementale al 15% sul reddito aggiuntivo. Testo integrale su Normattiva.<br>
+          <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2023-12-30;216" target="_blank">normattiva.it</a>
+          <a href="#text2" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref3">
+        <span class="fonte-num">[3]</span>
+        <span class="fonte-text">
+          <strong>Agenzia delle Entrate - Relazione sull'economia non osservata e sull'evasione fiscale (2023)</strong><br>
+          Il tax gap italiano è stimato in circa 83,6 miliardi di euro annui (dato di riferimento 2021). Dettaglio per imposta: IRPEF autonomi, IVA, IRES, IRAP.<br>
+          <a href="https://www.finanze.gov.it/export/sites/finanze/.galleries/Documenti/Varie/Relazione-evasione-fiscale-e-contributiva-2023_26set-finale.pdf" target="_blank">agenziaentrate.gov.it</a>
+          <a href="#text3" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref4">
+        <span class="fonte-num">[4]</span>
+        <span class="fonte-text">
+          <strong>Commissione Europea - VAT Gap Report 2023</strong><br>
+          Il divario IVA italiano ammonta a circa 14.6 miliardi di euro annui, tra i più elevati in termini assoluti nell'Unione Europea.<br>
+          <a href="https://taxation-customs.ec.europa.eu/system/files/2023-10/VAT%20Gap%20Report%202023_0.pdf" target="_blank">taxation-customs.ec.europa.eu</a>
+          <a href="#text3" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref5">
+        <span class="fonte-num">[5]</span>
+        <span class="fonte-text">
+          <strong>Istat - L'economia non osservata nei conti nazionali (2023)</strong><br>
+          Stima del sommerso economico: circa il 9% del PIL italiano.<br>
+          <a href="https://www.istat.it/comunicato-stampa/economia-non-osservata-nei-conti-nazionali-anni-2020-2023/" target="_blank">istat.it</a>
+          <a href="#text3" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref6">
+        <span class="fonte-num">[6]</span>
+        <span class="fonte-text">
+          <strong>Costituzione della Repubblica Italiana - art. 53</strong><br>
+          "Tutti sono tenuti a concorrere alle spese pubbliche in ragione della loro capacita contributiva. Il sistema tributario è informato a criteri di progressività."<br>
+          <a href="https://www.senato.it/istituzione/la-costituzione/parte-i/titolo-iv/articolo-53" target="_blank">quirinale.it</a>
+          <a href="#text7" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref7">
+        <span class="fonte-num">[7]</span>
+        <span class="fonte-text">
+          <strong>Fondazione NENS / Ufficio Parlamentare di Bilancio - Simulazioni flat tax (2023)</strong><br>
+          Le stime di impatto di una flat tax indicano effetti redistributivi favorevoli ai redditi medio-alti.<br>
+          <a href="https://www.upbilancio.it/it/audizione-nellambito-dellesame-del-ddl-di-bilancio-per-il-2023/" target="_blank">upbilancio.it</a>
+          <a href="#text8" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref8">
+        <span class="fonte-num">[8]</span>
+        <span class="fonte-text">
+          <strong>Banca d'Italia - Indagine sul patrimonio e sul risparmio delle famiglie (2023)</strong><br>
+          Il 10% delle famiglie piu abbienti detiene circa il 50% della ricchezza netta totale. Le disuguaglianze patrimoniali sono più marcate di quelle reddituali.<br>
+          <a href="https://www.bancaditalia.it/pubblicazioni/indagine-famiglie/index.html" target="_blank">bancaditalia.it</a>
+          <a href="#text9" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref9">
+        <span class="fonte-num">[9]</span>
+        <span class="fonte-text">
+          <strong>Ministero dell'Economia e delle Finanze</strong><br>
+          Aliquote vigenti sull'imposta di successione: dal 4% (linea diretta) all'8% (altri soggetti).<br>
+          <a href="https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-di-successione/aliquote-e-franchigie" target="_blank">agenziaentrate.gov.it</a>
+          <a href="#text10" class="back-to-text">&#8593;</a>
+        </span>
+      </div>
+
+    </div>
+    <div class="more-link-row temi-back-row">
+      <a class="more-link-cta" href="temi.html">
+        <span class="more-link-cta-text">torna ai temi politici</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+          
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 22 GIUGNO 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#ref"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      var rect = target.getBoundingClientRect();
+      var targetY = rect.top + window.pageYOffset - 60;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>

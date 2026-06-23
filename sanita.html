@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sanità - PuntoPolitico</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">22 GIUGNO 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">Notizie italiane<br>senza filtri</div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">Aggiornato ogni giorno<br>da fonti pubbliche e verificate.</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html">Home</a>
+      <a href="temi.html" class="active">Temi politici</a>
+      <a href="partiti.html">Partiti</a>
+      <a href="notizie.html">Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <a class="back-link" href="temi.html">Torna ai temi politici</a>
+
+  <div class="static-page">
+    <div class="section-label red">sanità</div>
+
+    <div class="info-block">
+      <h2>Introduzione</h2>
+      <p class="intro" id="text1">
+        Il Servizio Sanitario Nazionale (SSN) italiano è stato istituito con la legge 833/1978 e garantisce assistenza universale a tutti i cittadini;<sup><a href="#ref1">[1]</a></sup> è finanziato principalmente dalla fiscalità generale.
+      </p>
+      <p id="text2" style="margin-top:14px;">
+        L'Italia presenta indicatori di salute tra i migliori al mondo: l'aspettativa di vita è di 83,1 anni (dato Istat 2023), tra le più alte d'Europa;<sup><a href="#ref2">[2]</a></sup> il sistema è però sotto pressione crescente per una carenza di personale, un costante sottofinanziamento, un invecchiamento della popolazione e diseguaglianze territoriali Nord-Sud.
+      </p>
+    </div>
+
+    <div class="info-block">
+      <h2>Punti di forza e criticità</h2>
+      <div class="pros-cons-grid">
+        <div class="pros-col">
+          <h4>PUNTI DI FORZA</h4>
+          <ul>
+            <li>Copertura universale: nessun cittadino può essere escluso dall'assistenza di base.</li>
+            <li id="text3">Costo pro capite contenuto rispetto ad altri paesi con indicatori simili: la spesa pubblica è pari a circa il 6,2% del PIL, inferiore alla media OCSE (6,9%) e ben al di sotto di Germania e Francia.<sup><a href="#ref3">[3]</a></sup></li>
+            <li>Rete ospedaliera capillare con eccellenze riconosciute a livello internazionale.</li>
+          </ul>
+        </div>
+        <div class="cons-col">
+          <h4>CRITICITÀ PRINCIPALI</h4>
+          <ul>
+            <li id="text4">Liste d'attesa: circa il 10% degli italiani dichiara di aver rinunciato a una prestazione sanitaria per i tempi di attesa, spesso superiori a 6 mesi per visite specialistiche.<sup><a href="#ref4">[4]</a></sup></li>
+            <li id="text5">Carenza di medici e infermieri: si stima un deficit di circa 30.000 medici specialisti entro il 2030, causato da pensionamenti, emigrazione professionale e numero chiuso a medicina.<sup><a href="#ref5">[5]</a></sup></li>
+            <li id="text6">Diseguaglianze regionali: la mobilità sanitaria (pazienti che si spostano per cure) costa al SSN circa 4 miliardi/anno; il flusso è prevalentemente dal Sud al Nord.<sup><a href="#ref6">[6]</a></sup></li>
+            <li id="text7">Sottofinanziamento: la spesa sanitaria pubblica italiana in percentuale al PIL (6,2%) è al di sotto della media OCSE (6,9%), con una spesa pro capite inferiore di oltre 47 miliardi di euro alla media europea.<sup><a href="#ref3">[3]</a></sup></li>
+            <li>Crescita del privato: il 28% delle prestazioni avviene nel privato, spesso a carico diretto del paziente, aumentando le diseguaglianze.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h2>I dati in sintesi</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-family:var(--font-sans);font-size:14px;margin-top:8px;">
+          <thead>
+            <tr style="background:var(--gray-5);">
+              <th style="text-align:left;padding:10px 12px;border-bottom:2px solid var(--gray-4);">Indicatore</th>
+              <th style="text-align:center;padding:10px 12px;border-bottom:2px solid var(--gray-4);">Italia</th>
+              <th style="text-align:center;padding:10px 12px;border-bottom:2px solid var(--gray-4);">Media OCSE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--gray-5);">
+              <td style="padding:9px 12px;">Aspettativa di vita</td>
+              <td style="text-align:center;padding:9px 12px;">83,1 anni</td>
+              <td style="text-align:center;padding:9px 12px;">80,3 anni</td>
+            </tr>
+            <tr style="background:var(--gray-5);border-bottom:1px solid var(--gray-5);">
+              <td style="padding:9px 12px;">Spesa sanitaria pubblica (% PIL)</td>
+              <td style="text-align:center;padding:9px 12px;">6,2%</td>
+              <td style="text-align:center;padding:9px 12px;">6,9%</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--gray-5);">
+              <td style="padding:9px 12px;">Medici per 1.000 abitanti</td>
+              <td style="text-align:center;padding:9px 12px;">5,4</td>
+              <td style="text-align:center;padding:9px 12px;">3,7</td>
+            </tr>
+            <tr style="background:var(--gray-5);border-bottom:1px solid var(--gray-5);">
+              <td style="padding:9px 12px;">Infermieri per 1.000 abitanti</td>
+              <td style="text-align:center;padding:9px 12px;">6,9</td>
+              <td style="text-align:center;padding:9px 12px;">9,2</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 12px;">Posti letto ospedalieri per 1.000 ab.</td>
+              <td style="text-align:center;padding:9px 12px;">3,1</td>
+              <td style="text-align:center;padding:9px 12px;">4,3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-family:var(--font-sans);font-size:13px;color:var(--gray-3);margin-top:8px;">Fonte: OCSE Health Statistics 2023.<sup><a href="#ref3">[3]</a></sup></p>
+    </div>
+
+    <div class="info-block">
+      <h2>Storia e contesto legislativo</h2>
+      <p class="intro" style="font-size:17px;border-bottom:1px solid var(--gray-5);padding-bottom:18px;margin-bottom:0;">
+        Il SSN è uno dei sistemi universalistici più antichi d'Europa, costruito nel 1978 e progressivamente riformato - con risultati contraddittori - fino al PNRR del 2020.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">1978</div>
+          <div class="timeline-content">
+            <strong>Legge 833 - Istituzione del SSN</strong><br>
+            Sostituisce il precedente sistema mutualistico per categorie. Introduce la copertura universale e la gestione pubblica integrata.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">1992-1993</div>
+          <div class="timeline-content">
+            <strong>Aziendalizzazione (D.Lgs. 502/1992)</strong><br>
+            Le USL diventano Aziende Sanitarie Locali (ASL) con logiche gestionali aziendali. Introduzione del principio di concorrenza tra pubblico e privato accreditato.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2001</div>
+          <div class="timeline-content">
+            <strong>Riforma del Titolo V della Costituzione</strong><br>
+            La sanità passa alla competenza esclusiva delle Regioni, accentuando le differenze territoriali tra Nord e Sud.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2012</div>
+          <div class="timeline-content">
+            <strong>Piani di rientro regionali</strong><br>
+            Diverse Regioni (Calabria, Campania, Molise, Lazio) sono sottoposte a piani di rientro dal deficit sanitario con commissariamento e tagli ai servizi.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2020</div>
+          <div class="timeline-content">
+            <strong>Pandemia COVID-19 e PNRR</strong><br>
+            La pandemia evidenzia le fragilità del sistema: carenza di posti in terapia intensiva e disomogeneità regionale. Il PNRR destina circa 15,6 miliardi alla sanità (Case di Comunità, ospedali di comunità, telemedicina).
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <strong>Legge di bilancio 2024</strong><br>
+            Incremento del fondo sanitario nazionale a circa 136 miliardi (+4 miliardi rispetto al 2023), giudicato insufficiente dalle associazioni di categoria a coprire inflazione e fabbisogno reale.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <strong>Legge di bilancio 2025 e piano liste d'attesa</strong><br>
+            Stanziati ulteriori fondi per ridurre le liste d'attesa e rafforzare il personale del SSN. Il dibattito sul sottofinanziamento strutturale rimane aperto, con la spesa sanitaria pubblica italiana (6,2% del PIL) ancora al di sotto della media OCSE.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEZIONE FONTI -->
+    <div class="info-block" id="fonti">
+      <h2>Fonti e approfondimenti</h2>
+      <p style="font-family:var(--font-sans);font-size:15px;color:var(--gray-2);margin-bottom:18px;">
+        Di seguito le principali fonti utilizzate per la redazione di questa pagina.
+      </p>
+
+      <div class="fonte-item" id="ref1">
+        <span class="fonte-num">[1]</span>
+        <span class="fonte-text">
+          <strong>Legge 23 dicembre 1978, n. 833 - Istituzione del Servizio Sanitario Nazionale</strong><br>
+          Testo originale della legge istitutiva del SSN, con i principi di universalità, uguaglianza e globalità delle prestazioni.<br>
+          <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1978-12-23;833" target="_blank">normattiva.it</a>
+          <a href="#text1" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref2">
+        <span class="fonte-num">[2]</span>
+        <span class="fonte-text">
+          <strong>Istat - Indicatori demografici 2023</strong><br>
+          Aspettativa di vita alla nascita in Italia, tra le più alte d'Europa.<br>
+          <a href="https://www.istat.it/it/archivio/indicatori+demografici" target="_blank">istat.it</a>
+          <a href="#text2" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref3">
+        <span class="fonte-num">[3]</span>
+        <span class="fonte-text">
+          <strong>OCSE - Health at a Glance 2023 / GIMBE (2024)</strong><br>
+          Statistiche comparate su spesa sanitaria, personale medico, posti letto e indicatori di salute per i paesi OCSE. Spesa pubblica italiana: 6,2% del PIL (media OCSE 6,9%); gap stimato con la media UE di oltre 47 miliardi/anno. Medici per 1.000 ab.: 5,4 (Italia) vs 3,7 (media OCSE). Infermieri: 6,9 (Italia) vs 9,2 (media OCSE).<br>
+          <a href="https://www.oecd.org/health/health-at-a-glance/" target="_blank">oecd.org</a>
+          <a href="#text3" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref4">
+        <span class="fonte-num">[4]</span>
+        <span class="fonte-text">
+          <strong>Istat - Indagine sulle condizioni di salute e ricorso ai servizi sanitari (2023)</strong><br>
+          Circa il 10% degli italiani dichiara di aver rinunciato nell'ultimo anno a una o più prestazioni sanitarie, principalmente per tempi di attesa eccessivi.<br>
+          <a href="https://www.istat.it/it/archivio/condizioni+di+salute" target="_blank">istat.it</a>
+          <a href="#text4" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref5">
+        <span class="fonte-num">[5]</span>
+        <span class="fonte-text">
+          <strong>Anaao Assomed - Rapporto sul fabbisogno di medici specialisti (2023)</strong><br>
+          Stima il deficit di circa 30.000 medici specialisti entro il 2030, analizzando pensionamenti, emigrazione e colli di bottiglia nel sistema formativo (numero chiuso, contratti di specializzazione).<br>
+          <a href="https://www.anaao.it/content.php?cont=37295" target="_blank">anaao.it</a>
+          <a href="#text5" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref6">
+        <span class="fonte-num">[6]</span>
+        <span class="fonte-text">
+          <strong>Ministero della Salute - Rapporto sulla mobilità sanitaria interregionale (2023)</strong><br>
+          La compensazione per la mobilità sanitaria tra Regioni ammonta a circa 4 miliardi di euro l'anno; il flusso prevalente è dalle Regioni meridionali verso quelle settentrionali.<br>
+          <a href="https://www.salute.gov.it/portale/temi/p2_6.jsp?id=1329&area=ricoveriOspedalieri&menu=vuoto" target="_blank">salute.gov.it</a>
+          <a href="#text6" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+    </div>
+    <div class="more-link-row temi-back-row">
+      <a class="more-link-cta" href="temi.html">
+        <span class="more-link-cta-text">torna ai temi politici</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+          
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 22 GIUGNO 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#ref"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      var targetY = target.getBoundingClientRect().top + window.pageYOffset - 60;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>

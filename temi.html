@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temi politici - Chiaro</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">23 giugno 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">
+      Notizie italiane<br>
+      senza filtri
+    </div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">
+      Aggiornato ogni giorno<br>
+      da fonti pubbliche e verificate.
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html" >Home</a>
+      <a href="temi.html" class="active">Temi politici</a>
+      <a href="partiti.html" >Partiti</a>
+      <a href="notizie.html" >Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+
+
+
+<div class="wrap">
+  <a class="back-link" href="index.html">Torna alla homepage</a>
+
+  <div class="static-page temi-page">
+    <div class="section-label">Temi politici</div>
+    <p class="intro">
+      I grandi temi del dibattito pubblico italiano, spiegati concisamente, accessibilmente e senza schierarsi. Per ogni tema sarà presente un'introduzione, un riassunto delle posizioni di ciascuna delle parti, una sezione storica e fattuale ed una sezione di fonti dove è possibile approfondire ulteriormente in autonomia.
+    </p>
+
+    <!-- Griglia in evidenza: nucleare grande, magistratura e immigrazione di fianco -->
+    <div class="temi-featured-grid">
+      <a class="temi-card temi-card-main" href="nucleare.html">
+        <span class="temi-tag">Nucleare</span>
+        <h3>Il ritorno al nucleare in Italia</h3>
+        <p>Storia delle centrali italiane, i due referendum, gli SMR di nuova generazione e le posizioni di oggi.</p>
+      </a>
+
+      <a class="temi-card temi-card-side" href="magistratura.html">
+        <span class="temi-tag tag-magistratura">Magistratura</span>
+        <h3>Riforma della giustizia</h3>
+        <p>Separazione delle carriere, prescrizione e riforma Nordio: cosa sarebbe cambiato e chi si schiera pro e contro.</p>
+      </a>
+
+      <a class="temi-card temi-card-side" href="immigrazione.html">
+        <span class="temi-tag tag-immigrazione">Immigrazione</span>
+        <h3>Flussi e politiche migratorie</h3>
+        <p>Numeri reali su arrivi e rimpatri, accoglienza e i diversi modelli proposti dalle forze politiche.</p>
+      </a>
+    </div>
+
+    <!-- Altri temi: stile lista, come la pagina delle notizie -->
+    <div class="section-label">Altri temi</div>
+    <div class="temi-rest-list">
+      <a class="temi-rest-item" href="sanita.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Sanità</div>
+          <h4>Il sistema sanitario nazionale</h4>
+          <p>Liste d'attesa, finanziamento del SSN e il confronto pubblico-privato.</p>
+        </div>
+      </a>
+
+      <a class="temi-rest-item" href="scuola.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Scuola</div>
+          <h4>La scuola italiana oggi</h4>
+          <p>Stipendi degli insegnanti, dispersione scolastica ed i finanziamenti alla scuola privata.</p>
+        </div>
+      </a>
+
+      <a class="temi-rest-item" href="tasse.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Tasse e fisco</div>
+          <h4>Flat tax, IRPEF e pressione fiscale</h4>
+          <p>Come funziona il sistema fiscale italiano, le proposte di riforma e i loro potenziali effetti.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Temi in arrivo: ancora senza pagina dedicata -->
+    <div class="section-label">In arrivo</div>
+    <div class="static-grid">
+      <div class="static-card">
+        <h3>Legge Elettorale</h3>
+        <p>Riduzione del numero di parlamentari, parlamentarismo vs presidenzialismo.</p>
+      </div>
+      <div class="static-card">
+        <h3>Unione Europea</h3>
+        <p>Il ruolo dell'Italia, cos'è l'euroscetticismo, i pro e i contro del Green Deal.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+(function () {
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  document.querySelectorAll('.source-row[data-shuffle="true"]').forEach(function (row) {
+    const chips = Array.from(row.children);
+    shuffle(chips).forEach(function (chip) { row.appendChild(chip); });
+  });
+})();
+
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 23 giugno 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

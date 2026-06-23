@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partiti - PuntoPolitico</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">23 giugno 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">
+      Notizie italiane<br>
+      senza filtri
+    </div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">
+      Aggiornato ogni giorno<br>
+      da fonti pubbliche e verificate.
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html" >Home</a>
+      <a href="temi.html" >Temi politici</a>
+      <a href="partiti.html" class="active">Partiti</a>
+      <a href="notizie.html" >Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+
+
+
+<div class="wrap">
+  <a class="back-link" href="index.html">Torna alla homepage</a>
+
+  <div class="static-page temi-page">
+    <div class="section-label">Partiti politici</div>
+    <p class="intro">
+      Storia, idee e posizioni dei sette principali partiti italiani.
+    </p>
+
+    <div class="temi-rest-list">
+
+      <a class="temi-rest-item" href="partito-fdi.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Governo</div>
+          <h4>Fratelli d'Italia</h4>
+          <p>Il partito di Giorgia Meloni, il primo partito italiano per preferenze al momento di scrittura che guida della coalizione di governo in carica dal 2022. Con radici nell'MSI (post-fascista), oggi si definisce conservatore e patriota.</p>
+        </div>
+        <img class="partito-logo" src="assets/logos/partiti/fratelliditalia.png" alt="Logo Fratelli d'Italia">
+      </a>
+
+      <a class="temi-rest-item" href="partito-pd.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Opposizione</div>
+          <h4>Partito Democratico</h4>
+          <p>Il principale partito di centrosinistra, guidato da Elly Schlein dal 2023. Nato nel 2007 dalla fusione di DS e Margherita, eredita la tradizione della sinistra cristiana e socialdemocratica.</p>
+        </div>
+        <img class="partito-logo" src="assets/logos/partiti/pd.png" alt="Logo Partito Democratico">
+      </a>
+
+      <a class="temi-rest-item" href="partito-m5s.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Opposizione</div>
+          <h4>Movimento 5 Stelle</h4>
+          <p>Fondato da Beppe Grillo nel 2009, ora guidato da Giuseppe Conte, è nato presentandosi come un'alternativa alla dicotomia destra-sinistra della politica italiano.</p>
+        </div>
+        <img class="partito-logo" src="assets/logos/partiti/5stelle.png" alt="Logo Movimento 5 Stelle">
+      </a>
+
+      <a class="temi-rest-item" href="partito-fi.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Governo</div>
+          <h4>Forza Italia</h4>
+          <p>Fondato da Silvio Berlusconi nel 1994, oggi guidato da Antonio Tajani. Caratterizzato da liberalismo moderato, atlantismo ed europeismo.</p>
+        </div>
+        <img class="partito-logo" src="assets/logos/partiti/forzaitalia.png" alt="Logo Forza Italia">
+      </a>
+
+      <a class="temi-rest-item" href="partito-avs.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Opposizione</div>
+          <h4>Alleanza Verdi e Sinistra</h4>
+          <p>Coalizione elettorale tra Europa Verde e Sinistra Italiana. Ecologismo, diritti e pacifismo. Guidata da Angelo Bonelli e Nicola Fratoianni.</p>
+        </div>
+        <img class="partito-logo" src="assets/logos/partiti/avs.png" alt="Logo Alleanza Verdi e Sinistra">
+      </a>
+
+      <a class="temi-rest-item" href="partito-lega.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Governo</div>
+          <h4>Lega</h4>
+          <p>Il partito di Matteo Salvini. Nato come Lega Nord federalista negli anni '90, si è trasformato in partito nazionale sovranista.</p>
+        </div>
+        <img class="partito-logo" src="assets/logos/partiti/lega.png" alt="Logo Lega">
+      </a>
+
+      <a class="temi-rest-item" href="partito-fn.html">
+        <div class="temi-rest-body">
+          <div class="temi-rest-tag">Opposizione/Misto</div>
+          <h4>Futuro Nazionale</h4>
+          <p>Fondato da Roberto Vannacci il 3 febbraio 2026, dopo la sua uscita dalla Lega, di cui era stato eletto europarlamentare nel 2024 con oltre 500.000 preferenze. Destra sovranista e identitaria, critica all'UE e all'establishment.</p>
+        </div>
+        <img class="partito-logo" src="assets/logos/partiti/futuronazionale.png" alt="Logo Futuro Nazionale">
+      </a>
+
+    </div>
+
+    <div class="section-label">In arrivo</div>
+    <div class="static-grid">
+      <div class="static-card">
+        <h3>Azione</h3>
+        <p>Il partito liberal-democratico di Carlo Calenda. Riformismo, competenza, atlantismo. Scisso da Italia Viva nel 2022.</p>
+      </div>
+      <div class="static-card">
+        <h3>Italia Viva</h3>
+        <p>Il partito di Matteo Renzi, nato nel 2019 dopo la scissione dal PD. Liberalismo di mercato, riformismo, centrismo.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script>
+(function () {
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  document.querySelectorAll('.source-row[data-shuffle="true"]').forEach(function (row) {
+    const chips = Array.from(row.children);
+    shuffle(chips).forEach(function (chip) { row.appendChild(chip); });
+  });
+})();
+
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 23 giugno 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

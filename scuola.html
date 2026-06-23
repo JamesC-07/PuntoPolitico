@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scuola - PuntoPolitico</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">22 GIUGNO 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">Notizie italiane<br>senza filtri</div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">Aggiornato ogni giorno<br>da fonti pubbliche e verificate.</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html">Home</a>
+      <a href="temi.html" class="active">Temi politici</a>
+      <a href="partiti.html">Partiti</a>
+      <a href="notizie.html">Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back-link" href="temi.html">Torna ai temi politici</a>
+
+  <div class="static-page">
+    <div class="section-label red">scuola</div>
+
+    <div class="info-block">
+      <h2>Introduzione</h2>
+      <p class="intro" id="text1">
+        Il sistema scolastico italiano è pubblico e statale, obbligatorio dai 6 ai 16 anni, articolato in scuola primaria (5 anni), secondaria di primo grado (3 anni) e secondaria di secondo grado (5 anni). È gestito dal Ministero dell'Istruzione e del Merito (MIM) attraverso uffici scolastici regionali.<sup><a href="#ref1">[1]</a></sup> Esiste un settore privato paritario che riceve finanziamenti pubblici.
+      </p>
+      <p id="text2" style="margin-top:14px;">
+        L'Italia presenta risultati medi nei test PISA (matematica, lettura, scienze), con un forte divario Nord-Sud.<sup><a href="#ref2">[2]</a></sup> Il tasso di dispersione scolastica è tra i più alti d'Europa e il tasso di laureati tra i più bassi.
+      </p>
+    </div>
+
+    <div id="text4" class="info-block">
+      <h2 id="text3">I temi del dibattito</h2>
+        <p id="text5">
+            La spesa pubblica per l'istruzione è pari al 4,2% del PIL, contro una media OCSE del 5,0%.<sup><a href="#ref3">[3]</a></sup><br>
+            Le scuole paritarie private ricevono circa 500 milioni/anno di fondi pubblici: il dibattito sulla loro legittimità è ricorrente, con posizioni che vanno dalla piena equiparazione alla soppressione dei contributi.<br>
+            Gli stipendi degli insegnanti italiani sono tra i più bassi dell'Europa occidentale: lo stipendio iniziale è di circa 1.450€/mese netto, contro circa 2.000€ in Francia e circa 2.600€ in Germania.<sup><a href="#ref4">[4]</a></sup><br>
+            Il precariato è strutturale: circa 200.000 supplenti ogni anno su un totale di circa 700.000 insegnanti. L'età media degli insegnanti è tra le più alte d'Europa, intorno ai 50 anni.<sup><a href="#ref5">[5]</a></sup><br>
+        </p>
+    </div>
+
+    <div class="info-block">
+      <h2>Risultati e dispersione</h2>
+      <p id="text6">
+        Ai test PISA 2022, l'Italia ha ottenuto 471 punti in matematica (media OCSE: 472) e 482 in lettura (media OCSE: 476): risultati in linea con la media, ma con una forte varianza interna tra le macro-aree geografiche.<sup><a href="#ref2">[2]</a></sup>
+      </p>
+      <p id="text7" style="margin-top:12px;">
+        Il tasso di dispersione scolastica precoce - 18-24enni senza diploma né formazione - è al 10,5% (2023), in calo ma ancora sopra la media UE del 9,6%. In Sicilia e Campania supera il 15%. Il tasso di conseguimento della laurea nella fascia 25-34 anni è del 29%, tra i più bassi d'Europa (media UE: 42%).<sup><a href="#ref3">[3]</a></sup>
+      </p>
+    </div>
+
+    <div class="info-block">
+      <h2>Storia e contesto legislativo</h2>
+      <p class="intro" style="font-size:17px;border-bottom:1px solid var(--gray-5);padding-bottom:18px;margin-bottom:0;">
+        Il sistema scolastico italiano ha radici nella riforma Gentile del 1923 e ha attraversato decenni di riforme parziali, spesso contestate e mai del tutto compiute.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">1923</div>
+          <div class="timeline-content">
+            <strong>Riforma Gentile</strong><br>
+            Struttura il sistema scolastico nazionale con un impianto umanistico e selettivo che influenza ancora oggi l'organizzazione del liceo classico e scientifico.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">1962</div>
+          <div class="timeline-content">
+            <strong>Scuola media unificata</strong><br>
+            Abolizione dell'avviamento professionale: la secondaria inferiore diventa unificata e obbligatoria per tutti, un passo decisivo verso la democratizzazione dell'istruzione.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">1999</div>
+          <div class="timeline-content">
+            <strong>Autonomia scolastica</strong><br>
+            Le scuole acquisiscono personalità giuridica e autonomia didattica, organizzativa e finanziaria. Rimasta parzialmente inattuata per carenze di risorse e resistenze burocratiche.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2010</div>
+          <div class="timeline-content">
+            <strong>Riforma Gelmini</strong><br>
+            Tagli significativi al personale (~87.000 posti) e all'orario in alcune scuole, accorpamento delle classi. Fortemente contestata dai sindacati.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2015</div>
+          <div class="timeline-content">
+            <strong>La Buona Scuola (legge 107/2015)</strong><br>
+            Introduce l'organico funzionale, l'alternanza scuola-lavoro obbligatoria (poi ridimensionata) e la chiamata diretta dei docenti da parte dei dirigenti. Riforma controversa, osteggiata dai sindacati.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <div class="timeline-content">
+            <strong>Ministero dell'Istruzione e del Merito</strong><br>
+            Il governo Meloni cambia il nome del Ministero aggiungendo «del Merito», scelta simbolicamente divisiva nel dibattito pubblico sull'uguaglianza e la selezione nel sistema scolastico.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2023-2026</div>
+          <div class="timeline-content">
+            <strong>PNRR e istruzione</strong><br>
+            Circa 17 miliardi destinati all'istruzione: asili nido, nuovi edifici scolastici, digitalizzazione, con obiettivi al 2026 legati al rispetto delle scadenze europee.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEZIONE FONTI -->
+    <div class="info-block" id="fonti">
+      <h2>Fonti e approfondimenti</h2>
+      <p style="font-family:var(--font-sans);font-size:15px;color:var(--gray-2);margin-bottom:18px;">
+        Di seguito le principali fonti utilizzate per la redazione di questa pagina.
+      </p>
+
+      <div class="fonte-item" id="ref1">
+        <span class="fonte-num">[1]</span>
+        <span class="fonte-text">
+          <strong>Ministero dell'Istruzione e del Merito - Ordinamento scolastico italiano</strong><br>
+          Struttura ufficiale del sistema scolastico: cicli, obblighi formativi, uffici scolastici regionali.<br>
+          <a href="https://www.istruzione.it/" target="_blank">istruzione.it</a>
+          <a href="#text1" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref2">
+        <span class="fonte-num">[2]</span>
+        <span class="fonte-text">
+          <strong>OCSE - PISA 2022 Results (Volume I)</strong><br>
+          Risultati italiani ai test internazionali: matematica 471 (media OCSE 472), lettura 482 (media OCSE 476). Analisi dei divari territoriali interni.<br>
+          <a href="https://www.oecd.org/pisa/publications/pisa-2022-results.htm" target="_blank">oecd.org/pisa</a>
+          <a href="#text6" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref3">
+        <span class="fonte-num">[3]</span>
+        <span class="fonte-text">
+          <strong>OCSE - Education at a Glance 2023</strong><br>
+          Statistiche comparate sull'istruzione: spesa pubblica italiana 4,1% del PIL (media OCSE 5,0%); tasso di laurea 25-34 anni: Italia 29%, media UE 42%.<br>
+          <a href="https://www.oecd.org/education/education-at-a-glance/" target="_blank">oecd.org</a>
+          <a href="#text3" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref4">
+        <span class="fonte-num">[4]</span>
+        <span class="fonte-text">
+          <strong>OCSE - Education at a Glance 2023 - Teachers' salaries</strong><br>
+          Confronto degli stipendi degli insegnanti per paese: Italia tra i più bassi dell'Europa occidentale, con stipendio iniziale di circa 1.450€ netti/mese.<br>
+          <a href="https://www.oecd.org/education/education-at-a-glance/" target="_blank">oecd.org</a>
+          <a href="#text4" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <div class="fonte-item" id="ref5">
+        <span class="fonte-num">[5]</span>
+        <span class="fonte-text">
+          <strong>Ministero dell'Istruzione e del Merito - Dati statistici sul personale scolastico (2023)</strong><br>
+          Dati su precariato: circa 200.000 supplenti su 700.000 insegnanti totali. Età media del corpo docente italiano: circa 50 anni.<br>
+          <a href="https://dati.istruzione.it/opendata/opendata/catalogo/elements1/?area=Personale+Scuola" target="_blank">istruzione.it</a>
+          <a href="#text5" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+    </div>
+    <div class="more-link-row temi-back-row">
+      <a class="more-link-cta" href="temi.html">
+        <span class="more-link-cta-text">torna ai temi politici</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+          
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 22 GIUGNO 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#ref"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      var targetY = target.getBoundingClientRect().top + window.pageYOffset - 60;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>

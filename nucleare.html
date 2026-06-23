@@ -1,0 +1,387 @@
+<!-- nucleare.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nucleare - PuntoPolitico</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ppolitico-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">22 GIUGNO 2026</span>
+    <div class="topbar-links">
+      
+      <a href="info.html">Info e contatti</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-left">Notizie italiane<br>senza filtri</div>
+    <div class="masthead-center">
+      <div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div>
+      <div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+    </div>
+    <div class="masthead-right">Aggiornato ogni giorno<br>da fonti pubbliche e verificate.</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <div class="site-nav-links">
+      <a href="index.html">Home</a>
+      <a href="temi.html" class="active">Temi politici</a>
+      <a href="partiti.html">Partiti</a>
+      <a href="notizie.html">Tutte le notizie</a>
+    </div>
+    <button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <a class="back-link" href="temi.html">Torna ai temi politici</a>
+
+  <div class="static-page">
+    <div class="section-label red">nucleare</div>
+
+    <div class="info-block">
+      <h2>Cos'è</h2>
+      <p class="intro" id="text1">
+        L'energia nucleare sfrutta la fissione atomica per produrre calore, che viene poi convertito in elettricità tramite turbine a vapore. Le centrali nucleari non emettono CO₂ durante il funzionamento (ed in generale durante l'intero ciclo di vita, le emissioni rimangono basse rispetto alle altre fonti<sup><a href="#ref1">[1]</a></sup>), ma producono scorie radioattive che richiedono secoli di stoccaggio sicuro. L'Italia ha operato quattro centrali nucleari tra il 1963 e il 1990: Latina, Garigliano, Trino Vercellese e Caorso.<sup><a href="#ref5">[5]</a></sup> Dopo il disastro di Chernobyl del 1986 e due referendum (1987 e 2011), il paese ha abbandonato il nucleare civile. L'Italia importa una quota significativa di elettricità da Francia e Svizzera, dove l'energia nucleare copre gran parte del mix produttivo, rendendo di fatto l'Italia un consumatore indiretto di energia nucleare.
+      </p>
+    </div>
+
+    <div class="info-block">
+      <h2>Argomenti a confronto</h2>
+
+      <div class="pros-cons-grid">
+        <div class="pros-col">
+          <h4>ARGOMENTI A FAVORE</h4>
+          <ul>
+            <li id="text2">Basse emissioni di CO₂ per kWh prodotto nel ciclo di vita completo, paragonabili all'eolico e inferiori al gas.<sup><a href="#ref2">[2]</a></sup></li>
+            <li>Alta densità energetica: occupa poco territorio rispetto al solare o all'eolico per la stessa potenza installata.</li>
+            <li>Produzione continua (baseload), non dipendente dal contesto climatico o dal meteo.<sup><a href="#ref9">[9]</a></sup></li>
+            <li id="text7">Le tecnologie di 4ª generazione e gli SMR promettono maggiore sicurezza e scorie ridotte.<sup><a href="#ref7">[7]</a></sup></li>
+            <li id="text8">Riduzione della dipendenza energetica dall'estero e dai prezzi del gas.<sup><a href="#ref8">[8]</a></sup></li>
+            <li id="text9">Diversificazione del mix energetico come complemento alle rinnovabili intermittenti.<sup><a href="#ref9">[9]</a></sup></li>
+          </ul>
+        </div>
+
+        <div class="cons-col">
+          <h4>ARGOMENTI CONTRO</h4>
+          <ul>
+            <li>Le scorie ad alta radioattività rimangono pericolose per decine di migliaia di anni e l'Italia non ha ancora un deposito definitivo.</li>
+            <li id="text6">I costi di costruzione sono molto elevati e spesso fuori controllo (es. Flamanville, Hinkley Point C).<sup><a href="#ref6">[6]</a></sup><sup><a href="#ref11">[11]</a></sup></li>
+            <li id="text12">I tempi di costruzione sono lunghi (10-20 anni), incompatibili con gli obiettivi climatici a breve termine.<sup><a href="#ref12">[12]</a></sup></li>
+            <li>Il rischio di incidenti, seppur basso in probabilità, può avere conseguenze territoriali gravissime (Chernobyl, Fukushima).</li>
+            <li>Il problema della proliferazione nucleare: le tecnologie civili possono essere riadattate a scopi militari.</li>
+            <li id="text13">Le rinnovabili + storage sono già più economiche del nucleare nuovo nella maggior parte degli scenari.<sup><a href="#ref13">[13]</a></sup></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h2>Opinione pubblica</h2>
+      <p id="text10">
+        L'opinione pubblica è fluttuata in corrispondenza delle famose tragedie legate alle centrali nucleari di Chernobyl e Fukushima: prima di queste due tragedie, circa il 55% degli italiani era favorevole al nucleare, ma nel 2011 i favorevoli erano solo il circa 23%. Anche ora la maggior parte della popolazione sembra contraria.<sup><a href="#ref10">[10]</a></sup> La scarsa fiducia da parte dell'opinione pubblica è un problema imprescindibile per i favorevoli: anche se tutta l'evidenza scientifica del mondo li supportasse, senza un sufficiente supporto della popolazione è improbabile che le politiche pro-nucleare abbiano successo. <br><br>
+      </p>
+    </div>
+
+    <div class="info-block">
+      <h2>Storia e dati</h2>
+      <p class="intro" style="font-size:17px;border-bottom:1px solid var(--gray-5);padding-bottom:18px;margin-bottom:0;">
+        L'Italia è stata tra i pionieri del nucleare civile in Europa, per poi diventare l'unico paese del G7 a rinunciarvi completamente.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">1963</div>
+          <div class="timeline-content">
+            <strong>Prima centrale italiana: Latina</strong><br>
+            Entra in funzione la centrale di Latina, la terza centrale nucleare commerciale al mondo. Seguiranno Garigliano (1964), Trino Vercellese (1965) e Caorso (1978).
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">1986</div>
+          <div class="timeline-content">
+            <strong>Disastro di Chernobyl</strong><br>
+            L'esplosione del reattore n.4 della centrale di Chernobyl (URSS) provoca un'ondata di panico in Europa. In Italia il dibattito pubblico si radicalizza.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">1987</div>
+          <div class="timeline-content">
+            <strong>Referendum: vittoria del NO</strong><br>
+            Gli italiani votano con oltre l'80% contro il nucleare. Le centrali vengono spente nei due anni successivi. L'Italia diventa il primo grande paese industrializzato a rinunciare all'atomo civile.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2009-2010</div>
+          <div class="timeline-content">
+            <strong>Tentativo di rilancio (governo Berlusconi)</strong><br>
+            La legge 99/2009 riapre la porta al nucleare, prevedendo nuove centrali. Il governo firma accordi con EDF francese e con il gruppo americano Westinghouse.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2011</div>
+          <div class="timeline-content">
+            <strong>Fukushima e secondo referendum</strong><br>
+            Il disastro della centrale giapponese di Fukushima Daiichi, seguito dall'ondata di maremoto del marzo 2011, riaccende le paure. Il referendum del giugno 2011 abroga le norme sul rilancio del nucleare con il 94% dei voti.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2023-oggi</div>
+          <div class="timeline-content">
+            <strong>Ritorno nel dibattito: SMR e fusione</strong><br>
+            Il governo Meloni riapre ufficialmente la discussione sul nucleare di nuova generazione. Viene istituita la piattaforma nazionale per il nucleare sostenibile (PNNS). Non è ancora stata presentata alcuna proposta legislativa concreta per nuove centrali.
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--gray-5);padding:18px 22px;border-radius:4px;margin-top:20px;font-family:var(--font-sans);font-size:15px;color:var(--gray-2);line-height:1.6;">
+        <strong style="color:var(--black);">Nota costituzionale:</strong><br>
+        Dal punto di vista costituzionale, l'energia rientra nella legislazione concorrente tra Stato e Regioni (art. 117 Cost.). Le Regioni hanno spesso espresso opposizione a ospitare centrali o depositi di scorie nel proprio territorio. Il problema della localizzazione del Deposito Nazionale dei Rifiuti Radioattivi - previsto dalla legge dal 2010 - non è ancora risolto.
+      </div>
+    </div>
+
+    <!-- SEZIONE FONTI -->
+    <div class="info-block" id="fonti">
+      <h2>Fonti e approfondimenti</h2>
+      <p style="font-family:var(--font-sans);font-size:15px;color:var(--gray-2);margin-bottom:18px;">
+        Di seguito le principali fonti utilizzate per la redazione di questa pagina.
+      </p>
+
+      <!-- 1 -->
+      <div class="fonte-item" id="ref1">
+        <span class="fonte-num">[1]</span>
+        <span class="fonte-text">
+          <strong>IPCC - Intergovernmental Panel on Climate Change</strong><br>
+          Valuta l'impronta di carbonio del nucleare come equivalente a quella dell'eolico nel ciclo di vita completo.<br>
+          <a href="https://archive.ipcc.ch/ipccreports/tar/wg3/index.php?idp=128#3842" target="_blank">ipcc.ch</a>
+          <a href="#text1" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 2 -->
+      <div class="fonte-item" id="ref2">
+        <span class="fonte-num">[2]</span>
+        <span class="fonte-text">
+          <strong>IEA - Nuclear Power and Secure Energy Transitions (2023)</strong><br>
+          Il nucleare è una fonte di elettricità a basse emissioni, disponibile su richiesta, con emissioni di gas serra nel ciclo di vita estremamente basse, paragonabili all'eolico.<br>
+          <a href="https://www.iea.org/energy-system/electricity/nuclear-power" target="_blank">iea.org</a>
+          <a href="#text2" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 3 -->
+      <div class="fonte-item" id="ref3">
+        <span class="fonte-num">[3]</span>
+        <span class="fonte-text">
+          <strong>Confindustria-ENEA (2025) - "Lo sviluppo dell'energia nucleare nel mix energetico nazionale"</strong><br>
+          Stima che il nucleare in Italia genererebbe un ritorno economico pari al 2,5% del PIL e creerebbe circa 117.000 posti di lavoro. Costo SMR/AMR stimato tra 70 e 110 USD/MWh.<br>
+          <a href="https://www.media.enea.it/comunicati-e-news/archivio-anni/anno-2025/energia-nucleare-confindustria-ed-enea-presentano-studio-su-tecnologie-costi-e-ricadute.html" target="_blank">enea.it</a>
+          <a href="#text1" class="back-to-text">↑</a>
+        </span>
+    </div>
+      <!-- 4 -->
+      <div class="fonte-item" id="ref4">
+        <span class="fonte-num">[4]</span>
+        <span class="fonte-text">
+          <strong>IAEA - Nuclear Power Reactors in the World</strong><br>
+          Dati sul funzionamento dei reattori civili e sulla fissione nucleare.<br>
+          <a href="https://www.iaea.org" target="_blank">iaea.org</a>
+          <a href="#text1" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 5 -->
+      <div class="fonte-item" id="ref5">
+        <span class="fonte-num">[5]</span>
+        <span class="fonte-text">
+          <strong>Sogin - Società Gestione Impianti Nucleari</strong><br>
+          Decommissioning degli impianti nucleari italiani: Latina, Garigliano, Trino Vercellese, Caorso.<br>
+          <a href="https://www.sogin.it" target="_blank">sogin.it</a>
+          <a href="#text1" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 6 -->
+      <div class="fonte-item" id="ref6">
+        <span class="fonte-num">[6]</span>
+        <span class="fonte-text">
+          <strong>Statista - Cost overruns of EPR nuclear reactors</strong><br>
+          Olkiluoto 3: da €3,2 mld a €11 mld; Flamanville 3: da €3,3 mld a €23,7 mld; Hinkley Point C: oltre €55 mld (più del doppio della stima iniziale).<br>
+          <a href="https://www.statista.com/chart/36138/cost-overruns-and-construction-delays-of-epr-nuclear-reactors-in-europe/" target="_blank">statista.com</a>
+          <a href="#text6" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 7 -->
+      <div class="fonte-item" id="ref7">
+        <span class="fonte-num">[7]</span>
+        <span class="fonte-text">
+          <strong>World Nuclear Association - Small Modular Reactors</strong><br>
+          Gli SMR sono reattori inferiori a 300 MWe, progettati con fabbricazione in fabbrica e produzione in serie per ridurre tempi e costi di costruzione.<br>
+          <a href="https://world-nuclear.org/information-library/nuclear-power-reactors/small-modular-reactors/small-modular-reactors" target="_blank">world-nuclear.org</a>
+          <a href="#text7" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 8 -->
+      <div class="fonte-item" id="ref8">
+        <span class="fonte-num">[8]</span>
+        <span class="fonte-text">
+          <strong>IEA - Net Zero Roadmap (2023 update)</strong><br>
+          Nello scenario Net Zero Emissions, la capacità nucleare più che raddoppia da 413 GW a 916 GW entro il 2050. Il nucleare è essenziale per ridurre la dipendenza energetica dall'estero.<br>
+          <a href="https://www.iea.org/reports/low-emissions-sources-of-electricity?language=zh" target="_blank">iea.org</a>
+          <a href="#text8" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 9 -->
+      <div class="fonte-item" id="ref9">
+        <span class="fonte-num">[9]</span>
+        <span class="fonte-text">
+          <strong>IAEA - Five Reasons the Clean Energy Transition Needs Nuclear Power (2026)</strong><br>
+          Il nucleare fornisce elettricità continua (baseload) e complementa le rinnovabili intermittenti. La capacità nucleare globale potrebbe più che raddoppiare entro il 2050.<br>
+          <a href="https://www.iaea.org/newscenter/news/five-reasons-the-clean-energy-transition-needs-nuclear-power" target="_blank">iaea.org</a>
+          <a href="#text9" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 10 -->
+      <div class="fonte-item" id="ref10">
+        <span class="fonte-num">[10]</span>
+        <span class="fonte-text">
+          <strong>Ipsos - Osservatorio "Gli italiani e l'energia" (2024)</strong><br>
+          Sondaggio: 81% degli italiani contrario al ritorno del nucleare (in crescita dal 75% di giugno 2024). Solo il 18% accetterebbe un sito a 10 km da casa.<br>
+          <a href="https://www.ipsos.com" target="_blank">ipsos.com</a>
+          <a href="#text10" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 11 -->
+      <div class="fonte-item" id="ref11">
+        <span class="fonte-num">[11]</span>
+        <span class="fonte-text">
+          <strong>Statista - Cost overruns of EPR nuclear reactors</strong><br>
+          Dettaglio sui costi di costruzione dei reattori EPR: Flamanville €23,7 mld (+720% dal previsto), Hinkley Point C oltre €55 mld.<br>
+          <a href="https://www.statista.com/chart/36138/cost-overruns-and-construction-delays-of-epr-nuclear-reactors-in-europe/" target="_blank">statista.com</a>
+          <a href="#text6" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 12 -->
+      <div class="fonte-item" id="ref12">
+        <span class="fonte-num">[12]</span>
+        <span class="fonte-text">
+          <strong>World Nuclear Industry Status Report (2025)</strong><br>
+          Rapporto annuale indipendente: i tempi di costruzione delle centrali nucleari sono in media 10-20 anni, troppo lunghi per gli obiettivi climatici del 2030-2035.<br>
+          <a href="https://www.worldnuclearreport.org" target="_blank">worldnuclearreport.org</a>
+          <a href="#text12" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+      <!-- 13 -->
+      <div class="fonte-item" id="ref13">
+        <span class="fonte-num">[13]</span>
+        <span class="fonte-text">
+          <strong>Lund et al. (2026) - Energy Journal, "SLCOE"</strong><br>
+          Studio peer-reviewed: in un sistema energetico integrato, il costo del nucleare (€100/MWh) è superiore a quello di un mix eolico+solare (€46/MWh). Le rinnovabili + storage risultano più economiche nella maggior parte degli scenari.<br>
+          <a href="https://www.sciencedirect.com/science/article/pii/S0360544226009837" target="_blank">sciencedirect.com</a>
+          <a href="#text13" class="back-to-text">↑</a>
+        </span>
+      </div>
+
+
+    </div>
+    <div class="more-link-row temi-back-row">
+      <a class="more-link-cta" href="temi.html">
+        <span class="more-link-cta-text">torna ai temi politici</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Punto<em>Politico</em></div>
+        <div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Sezioni</div>
+          <a href="index.html">Home</a>
+          <a href="notizie.html">Tutte le notizie</a>
+          <a href="temi.html">Temi politici</a>
+          <a href="partiti.html">Partiti</a>
+          
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Il sito</div>
+          <a href="info.html">Info e contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Aggiornato il 22 GIUGNO 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#ref"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      var rect = target.getBoundingClientRect();
+      var offset = 60;
+      var targetY = rect.top + window.pageYOffset - offset;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.js-theme-toggle');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('ppolitico-theme', current); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>
