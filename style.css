@@ -131,7 +131,6 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 }
 .topbar-links a { color: #8b8b8b; transition: color 0.1s; }
 .topbar-links a:hover { color: var(--white); }
-.topbar-links a + a { border-left: 1px solid #333; padding-left: 24px; }
 
 /* ── MASTHEAD ── */
 .masthead {
@@ -1539,4 +1538,10 @@ html[data-theme="dark"] .theme-toggle-topbar .icon-moon { display: none; }
     border-right: 1px solid var(--gray-5);
   }
   .site-nav a:last-child { border-right: none; }
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
