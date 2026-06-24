@@ -1320,3 +1320,148 @@ html[data-theme="dark"] .source-chip:has(img.logo-dark) img.logo-light { display
     height: 48px;
   }
 }
+
+/* ── NEUTRAL COLS (partiti: temi centrali + posizioni internazionali) ── */
+:root {
+  --yellow: #b8860b;
+  --yellow-light: #fdf8e8;
+  --purple: #6b4fbb;
+  --purple-light: #f3f0fb;
+}
+html[data-theme="dark"] {
+  --yellow: #d4a017;
+  --yellow-light: #2a2210;
+  --purple: #9b7fe8;
+  --purple-light: #1e1730;
+}
+.neutral-col {
+  background: var(--gray-5);
+  border-radius: 6px;
+  padding: 20px 24px 24px;
+  border-top: 4px solid var(--gray-4);
+}
+.neutral-a {
+  border-top-color: var(--yellow);
+}
+.neutral-b {
+  border-top-color: var(--purple);
+}
+.neutral-col h4 {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-2);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.neutral-a h4 { color: var(--yellow); }
+.neutral-b h4 { color: var(--purple); }
+.neutral-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.neutral-col li {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 8px 0 8px 28px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  color: var(--gray-1);
+}
+html[data-theme="dark"] .neutral-col li { border-bottom: 1px solid rgba(255,255,255,0.06); }
+.neutral-col li:last-child { border-bottom: none; }
+.neutral-a li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 14px;
+}
+.neutral-b li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ── MOBILE FIXES ── */
+@media (max-width: 600px) {
+  /* Topbar: nascondi links in mobilissimo, mostra solo data */
+  .topbar-links { gap: 10px; font-size: 11px; letter-spacing: 0.04em; }
+  .topbar-date { font-size: 11px; }
+
+  /* Masthead: riduci padding */
+  .masthead { padding: 20px 0 14px; }
+
+  /* Nav: overflow scroll se necessario */
+  .site-nav-inner { justify-content: flex-start; overflow-x: auto; }
+  .site-nav-links { flex-wrap: nowrap; }
+  .site-nav a { padding: 11px 12px; font-size: 11px; white-space: nowrap; }
+
+  /* Story card: layout verticale corretto */
+  .story-card { padding: 16px 0; margin: 0; }
+  .story-card-headline { font-size: 20px; }
+  .story-card-summary { font-size: 14px; }
+
+  /* Featured grid: stack verticale */
+  .featured-grid { border: none; }
+  .featured-card { padding: 16px 0; border-bottom: 1px solid var(--gray-4); }
+  .featured-main .featured-headline { font-size: clamp(22px, 6vw, 30px); }
+
+  /* Static grid */
+  .static-grid { gap: 1px; }
+  .static-card { padding: 18px 16px; }
+
+  /* Pros/cons e neutral: stack */
+  .pros-cons-grid { gap: 12px; }
+
+  /* Footer */
+  .footer-top { padding: 28px 0 24px; gap: 20px; }
+  .footer-name { font-size: 24px; }
+
+  /* Timeline */
+  .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+
+  /* Sezioni home */
+  .section-block { padding: 20px 0 28px; }
+  .section-block:last-child { padding-left: 0; padding-top: 20px; }
+
+  /* Wrap: garantisci non overflow */
+  .wrap { padding: 0 16px; max-width: 100%; overflow-x: hidden; }
+
+  /* Source chips: wrap corretto */
+  .source-row { gap: 6px; }
+  .source-chip { padding: 6px 10px; font-size: 13px; }
+  .source-chip img { height: 18px; max-width: 70px; }
+
+  /* Temi rest */
+  .temi-rest-item { padding: 14px 0; }
+  .temi-rest-item h4 { font-size: 18px; }
+
+  /* Logo partiti */
+  .partito-logo { width: 40px; height: 40px; }
+
+  /* more-link-cta */
+  .more-link-cta { padding: 14px 18px; }
+  .more-link-cta-text { font-size: 13px; }
+
+  /* Static page */
+  .static-page { padding: 20px 0 48px; }
+  .story-full { padding: 16px 0 48px; }
+}
+
+@media (max-width: 380px) {
+  .topbar-links { display: none; }
+  .site-nav a { padding: 10px 9px; font-size: 10px; }
+}
