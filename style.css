@@ -131,6 +131,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 }
 .topbar-links a { color: #8b8b8b; transition: color 0.1s; }
 .topbar-links a:hover { color: var(--white); }
+.topbar-links a + a { border-left: 1px solid #333; padding-left: 24px; }
 
 /* ── MASTHEAD ── */
 .masthead {
@@ -197,7 +198,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
   z-index: 50;
 }
 .site-nav-inner {
-  justify-content: flex-start;
+  justify-content: center;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
@@ -1486,9 +1487,9 @@ html[data-theme="dark"] .neutral-col li { border-bottom: 1px solid rgba(255,255,
 }
 
 
-/* ── TOPBAR THEME TOGGLE (solo mobile) ── */
+/* ── TOPBAR THEME TOGGLE (mobile + desktop) ── */
 .theme-toggle-topbar {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 28px;
@@ -1501,6 +1502,10 @@ html[data-theme="dark"] .neutral-col li { border-bottom: 1px solid rgba(255,255,
   padding: 0;
   transition: color 0.12s;
 }
+
+/* Hide left/right nav theme toggles — button is in topbar */
+.theme-toggle-left,
+.theme-toggle-right { display: none; }
 .theme-toggle-topbar svg {
   width: 15px;
   height: 15px;
@@ -1513,14 +1518,7 @@ html[data-theme="dark"] .theme-toggle-topbar .icon-moon { display: none; }
 .theme-toggle-topbar:hover { color: var(--white); }
 
 @media (max-width: 600px) {
-  /* Nascondi bottoni tema dalla nav */
-  .theme-toggle-left,
-  .theme-toggle-right { display: none; }
-
-  /* Mostra bottone tema nella topbar */
-  .theme-toggle-topbar { display: flex; }
-
-  /* Nav: solo i link, senza bottoni ai lati */
+  /* Nav: solo i link */
   .site-nav-inner {
     justify-content: flex-start;
     overflow-x: auto;
