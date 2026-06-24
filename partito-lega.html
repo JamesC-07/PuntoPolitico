@@ -19,7 +19,7 @@
   <script>(function(){try{var t=localStorage.getItem('ppolitico-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
-<div class="topbar"><div class="wrap topbar-inner"><span class="topbar-date">23 GIUGNO 2026</span><div class="topbar-links"><a href="info.html">Info e contatti</a></div></div></div>
+<div class="topbar"><div class="wrap topbar-inner"><span class="topbar-date">23 GIUGNO 2026</span><div class="topbar-links"><a href="newsletter.html">Newsletter</a><a href="info.html">Info e contatti</a></div><button class="theme-toggle theme-toggle-topbar js-theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line></svg></button></div></div>
 <header class="masthead"><div class="wrap masthead-inner"><div class="masthead-left">Notizie italiane<br>senza filtri</div><div class="masthead-center"><div class="masthead-name"><a href="index.html">Punto<em>Politico</em></a></div><div class="masthead-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div></div><div class="masthead-right">Aggiornato ogni giorno<br>da fonti pubbliche e verificate.</div></div></header>
 <nav class="site-nav"><div class="wrap site-nav-inner"><button class="theme-toggle theme-toggle-left js-theme-toggle" aria-label="Cambia tema"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle></svg></button><div class="site-nav-links"><a href="index.html">Home</a><a href="temi.html">Temi politici</a><a href="partiti.html" class="active">Partiti</a><a href="notizie.html">Tutte le notizie</a></div><button class="theme-toggle theme-toggle-right js-theme-toggle" aria-label="Cambia tema"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle></svg></button></div></nav>
 
@@ -84,10 +84,16 @@
         <span class="more-link-cta-text">torna ai partiti</span>
       </a>
     </div>
+
+    <div class="more-link-row temi-back-row" style="margin-top:12px;">
+      <a class="more-link-cta" href="newsletter.html">
+        <span class="more-link-cta-text">iscriviti alla newsletter</span>
+      </a>
+    </div>
   </div>
 </div>
 
-<footer class="site-footer"><div class="wrap footer-inner"><div class="footer-top"><div class="footer-brand"><div class="footer-name">Punto<em>Politico</em></div><div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div></div><div class="footer-cols"><div class="footer-col"><div class="footer-col-title">Sezioni</div><a href="index.html">Home</a><a href="notizie.html">Tutte le notizie</a><a href="temi.html">Temi politici</a><a href="partiti.html">Partiti</a></div><div class="footer-col"><div class="footer-col-title">Il sito</div><a href="info.html">Info e contatti</a></div></div></div><div class="footer-bottom"><span>Aggiornato il 23 giugno 2026</span></div></div></footer>
+<footer class="site-footer"><div class="wrap footer-inner"><div class="footer-top"><div class="footer-brand"><div class="footer-name">Punto<em>Politico</em></div><div class="footer-tagline">Rimani informato, con notizie ed articoli a portata di mano.</div></div><div class="footer-cols"><div class="footer-col"><div class="footer-col-title">Sezioni</div><a href="index.html">Home</a><a href="notizie.html">Tutte le notizie</a><a href="temi.html">Temi politici</a><a href="partiti.html">Partiti</a></div><div class="footer-col"><div class="footer-col-title">Il sito</div><a href="newsletter.html">Newsletter</a><a href="info.html">Info e contatti</a></div></div></div><div class="footer-bottom"><span>Aggiornato il 23 giugno 2026</span></div></div></footer>
 <script>(function(){var btns=document.querySelectorAll('.js-theme-toggle');btns.forEach(function(btn){btn.addEventListener('click',function(){var current=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',current);try{localStorage.setItem('ppolitico-theme',current);}catch(e){}});});})();</script>
 </body>
 </html>

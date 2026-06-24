@@ -1485,3 +1485,60 @@ html[data-theme="dark"] .neutral-col li { border-bottom: 1px solid rgba(255,255,
   .site-nav-links::-webkit-scrollbar { display: none; }
 }
 
+
+/* ── TOPBAR THEME TOGGLE (solo mobile) ── */
+.theme-toggle-topbar {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: #8b8b8b;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  transition: color 0.12s;
+}
+.theme-toggle-topbar svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+.theme-toggle-topbar .icon-sun { display: none; }
+.theme-toggle-topbar .icon-moon { display: block; }
+html[data-theme="dark"] .theme-toggle-topbar .icon-sun { display: block; }
+html[data-theme="dark"] .theme-toggle-topbar .icon-moon { display: none; }
+.theme-toggle-topbar:hover { color: var(--white); }
+
+@media (max-width: 600px) {
+  /* Nascondi bottoni tema dalla nav */
+  .theme-toggle-left,
+  .theme-toggle-right { display: none; }
+
+  /* Mostra bottone tema nella topbar */
+  .theme-toggle-topbar { display: flex; }
+
+  /* Nav: solo i link, senza bottoni ai lati */
+  .site-nav-inner {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-nav-inner::-webkit-scrollbar { display: none; }
+  .site-nav-links {
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .site-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 11px 8px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    border-right: 1px solid var(--gray-5);
+  }
+  .site-nav a:last-child { border-right: none; }
+}
