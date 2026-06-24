@@ -197,11 +197,12 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
   z-index: 50;
 }
 .site-nav-inner {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 0;
+  justify-content: flex-start;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
 }
+.site-nav-inner::-webkit-scrollbar { display: none; } /* Chrome/Safari */
 .site-nav-links {
   display: flex;
   align-items: stretch;
