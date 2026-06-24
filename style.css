@@ -1466,3 +1466,20 @@ html[data-theme="dark"] .neutral-col li { border-bottom: 1px solid rgba(255,255,
   .topbar-links { display: none; }
   .site-nav a { padding: 10px 9px; font-size: 10px; }
 }
+
+
+@media (max-width: 600px) {
+  .site-nav-inner {
+    justify-content: space-between;
+    overflow-x: visible;
+    flex-wrap: nowrap;
+  }
+  .site-nav-links {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex: 1;
+    flex-wrap: nowrap;
+  }
+  .site-nav-links::-webkit-scrollbar { display: none; }
+}
