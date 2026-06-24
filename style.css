@@ -1473,6 +1473,7 @@ html[data-theme="dark"] .neutral-col li { border-bottom: 1px solid rgba(255,255,
     justify-content: space-between;
     overflow-x: visible;
     flex-wrap: nowrap;
+    margin-left: -10px;
   }
   .site-nav-links {
     overflow-x: auto;
@@ -1483,3 +1484,4 @@ html[data-theme="dark"] .neutral-col li { border-bottom: 1px solid rgba(255,255,
   }
   .site-nav-links::-webkit-scrollbar { display: none; }
 }
+
