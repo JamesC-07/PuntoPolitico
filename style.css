@@ -131,8 +131,25 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 }
 .topbar-links a { color: #8b8b8b; transition: color 0.1s; }
 .topbar-links a:hover { color: var(--white); }
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-/* ── MASTHEAD ── */
+/* ── NEWSLETTER CTA (landing page) ── */
+.newsletter-cta-row {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.newsletter-cta-row .more-link-cta {
+  justify-content: center;
+}
+.newsletter-cta-row .more-link-cta-text {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
 .masthead {
   border-bottom: 1px solid var(--gray-4);
   padding: 36px 0 22px;
