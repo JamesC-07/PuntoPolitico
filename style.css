@@ -1520,7 +1520,7 @@ html[data-theme="dark"] .neutral-col li { border-bottom: 1px solid rgba(255,255,
   transition: color 0.12s;
 }
 
-/* Hide left/right nav theme toggles — button is in topbar */
+/* Hide left/right nav theme toggles - button is in topbar */
 .theme-toggle-left,
 .theme-toggle-right { display: none; }
 .theme-toggle-topbar svg {
